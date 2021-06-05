@@ -3,4 +3,12 @@ import ReactDOM from 'react-dom';
 
 import Icon from './icon';
 
-ReactDOM.render(<Icon name="wechat"></Icon>, document.querySelector('#root'));
+ReactDOM.render(
+  <div>
+    <Icon name="wechat" />
+    <Icon name="disable" />
+    <Icon name="prohibit" />
+    <Icon name="alipay" />
+  </div>,
+  document.querySelector('#root')
+);
