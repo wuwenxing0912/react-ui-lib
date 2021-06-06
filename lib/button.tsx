@@ -1,8 +1,6 @@
-import React from 'react';
+import React from "react";
 function Button() {
-  return (
-    <button>click</button>
-  )
+	return <button>click</button>;
 }
 
 export default Button;
