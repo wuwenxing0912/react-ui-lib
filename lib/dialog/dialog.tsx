@@ -2,6 +2,7 @@ import { componentClassMaker } from "../helpers/classes";
 import React, { Fragment, ReactElement } from "react";
 import { Icon } from "../index";
 import "./dialog.scss";
+import ReactDOM from "react-dom";
 
 interface Props {
 	visible: boolean;
@@ -21,7 +22,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 			props.onClose(e);
 		}
 	};
-	return props.visible ? (
+	const portal = props.visible ? (
 		<Fragment>
 			<div className={cc("mask")} onClick={onClickMaskClose}></div>
 			<div className={cc()}>
@@ -38,6 +39,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 			</div>
 		</Fragment>
 	) : null;
+	return ReactDOM.createPortal(portal, document.body);
 };
 
 Dialog.defaultProps = {
