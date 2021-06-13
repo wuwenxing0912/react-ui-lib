@@ -1,0 +1,35 @@
+@import "../theme_color";
+
+.example-h {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	color: white;
+	background: lighten($color: $main-color, $amount: 25%);
+}
+
+.example-f {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	color: white;
+	background: lighten($color: $main-color, $amount: 25%);
+}
+
+.example-a {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background: lighten($color: $main-color, $amount: 15%);
+}
+
+.example-c {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background: $main-color;
+}
