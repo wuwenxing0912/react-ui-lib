@@ -4,10 +4,21 @@ function classes(...name: (string | undefined)[]) {
 
 export default classes;
 
-function componentClassMaker(pre: string) {
-	return function (name?: string) {
-		return [pre, name].filter(Boolean).join("-");
-	};
+interface Options {
+	extra: string | undefined;
 }
+
+interface ClassToggles {
+	[K: string]: boolean;
+}
+
+const componentClassMaker =
+	(prefix: string) => (name: string | ClassToggles, options?: Options) =>
+		Object.entries(name instanceof Object ? name : { [name]: name })
+			.filter((kv) => kv[1] !== false)
+			.map((kv) => kv[0])
+			.map((name) => [prefix, name].filter(Boolean).join("-"))
+			.concat((options && options.extra) || [])
+			.join(" ");
 
 export { componentClassMaker };

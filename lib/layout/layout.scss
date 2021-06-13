@@ -1,0 +1,23 @@
+.x-layout {
+	border: 1px solid red;
+	display: flex;
+	flex-direction: column;
+
+	&-content {
+		flex-grow: 1;
+		border: 1px solid blue;
+	}
+
+	& & {
+		flex-grow: 1;
+		border: 1px solid gray;
+    flex-direction: row;
+	}
+
+  &.hasAside {
+    flex-direction: row;
+    .x-layout {
+      flex-direction: column;
+    }
+  }
+}
