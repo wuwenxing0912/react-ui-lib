@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-import Icon from "./lib/icon/icon.home";
+import Icon from "./lib/icon/icon";
 import Button from "./lib/button.home";
 import Dialog from "./lib/dialog/dialog.home";
 import LayoutExample from "./lib/layout/layout.example";
@@ -10,8 +10,18 @@ import "./home.scss";
 
 ReactDOM.render(
 	<Router>
-		<Layout className='home' style={{ border: "1px solid red" }}>
-			<Header style={{ border: "1px solid green" }}>React UI</Header>
+		<Layout className="home">
+			<Header className="home-header">
+				<div className="logo">
+					<Icon name="home"></Icon>
+					<span className="text">X-UI</span>
+				</div>
+				<div className="gh">
+				<a href="https://github.com/wuwenxing0912/react-ui-lib" target='blank'>
+					<Icon name='github' className='gh-icon'></Icon>
+				</a>
+				</div>
+			</Header>
 			<Layout>
 				<Aside style={{ border: "1px solid blue" }}>
 					<h2>组件</h2>
