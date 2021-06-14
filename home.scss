@@ -29,6 +29,10 @@ a {
 	color: inherit;
 }
 
+pre {
+	font-family: -webkit-pictograph, ui-monospace, 'Courier New';
+}
+
 $main-color: #007aff;
 
 .home-header {
@@ -90,6 +94,7 @@ $main-color: #007aff;
 
 .home-content {
 	padding: 16px;
+	font-size: 16px;
 }
 
 .home-footer {

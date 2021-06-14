@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import Icon from "./lib/icon/icon";
+import IconDemo from './lib/icon/icon.demo';
 import Button from "./lib/button.home";
 import Dialog from "./lib/dialog/dialog.home";
 import LayoutExample from "./lib/layout/layout.example";
@@ -41,7 +42,7 @@ ReactDOM.render(
 					</ul>
 				</Aside>
 				<Content className='home-content'>
-					<Route path="/icon" component={Icon}></Route>
+					<Route path="/icon" component={IconDemo}></Route>
 					<Route path="/button" component={Button}></Route>
 					<Route path="/dialog" component={Dialog}></Route>
 					<Route path="/layout" component={LayoutExample}></Route>
