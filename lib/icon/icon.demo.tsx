@@ -4,9 +4,11 @@ import Demo from "../../demo";
 
 const IconDemo: React.FunctionComponent = () => {
 	return (
-		<Demo code={require("!!raw-loader!./icon.home.tsx").default}>
-			<IconHome />
-		</Demo>
+		<section>
+			<Demo code={require("!!raw-loader!./icon.home.tsx").default}>
+				<IconHome />
+			</Demo>
+		</section>
 	);
 };
 

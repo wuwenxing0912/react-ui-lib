@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import Icon from "./lib/icon/icon";
-import IconDemo from './lib/icon/icon.demo';
+import IconDemo from "./lib/icon/icon.demo";
 import Button from "./lib/button.home";
 import Dialog from "./lib/dialog/dialog.home";
 import LayoutExample from "./lib/layout/layout.example";
@@ -18,7 +18,10 @@ ReactDOM.render(
 					<span className="text">X-UI</span>
 				</div>
 				<div className="gh">
-					<a href="https://github.com/wuwenxing0912/react-ui-lib" target="blank" >
+					<a
+						href="https://github.com/wuwenxing0912/react-ui-lib"
+						target="blank"
+					>
 						<Icon name="github" className="gh-icon"></Icon>
 					</a>
 				</div>
@@ -41,11 +44,13 @@ ReactDOM.render(
 						</li>
 					</ul>
 				</Aside>
-				<Content className='home-content'>
-					<Route path="/icon" component={IconDemo}></Route>
-					<Route path="/button" component={Button}></Route>
-					<Route path="/dialog" component={Dialog}></Route>
-					<Route path="/layout" component={LayoutExample}></Route>
+				<Content className="home-content">
+					{/* <div className="component-container"> */}
+						<Route path="/icon" component={IconDemo}></Route>
+						<Route path="/button" component={Button}></Route>
+						<Route path="/dialog" component={Dialog}></Route>
+						<Route path="/layout" component={LayoutExample}></Route>
+					{/* </div> */}
 				</Content>
 			</Layout>
 			<Footer className="home-footer">
