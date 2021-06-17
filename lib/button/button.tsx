@@ -9,7 +9,6 @@ interface Props {
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
-	console.log(props);
   const {type, className, ...rest} = props;
   const buttonClassName = classes("x-button", type, className);
 	return (
