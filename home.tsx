@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import Icon from "./lib/icon/icon";
 import IconDemo from "./lib/icon/icon.demo";
-import Button from "./lib/button.home";
+import Button from "./lib/button/button.home";
 import Dialog from "./lib/dialog/dialog.home";
 import LayoutExample from "./lib/layout/layout.example";
 import { Aside, Content, Footer, Header, Layout } from "./lib/layout/layout";

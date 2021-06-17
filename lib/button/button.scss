@@ -1,0 +1,42 @@
+@import "../_theme_color.scss";
+.x-button {
+	height: 36px;
+	padding: 6px 15px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid;
+	border-radius: 4px;
+	font-size: 16px;
+	border-color: rgba(0, 0, 0, 0.15);
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	&.default:hover {
+		border-color: $main-color;
+		color: $main-color;
+	}
+	&.primary {
+		background-color: $main-color;
+		color: #fff;
+	}
+	&.primary:hover {
+		border-color: rgba($main-color, 0.85);
+		background-color: rgba($main-color, 0.85);
+	}
+	&.dashed {
+		border-style: dashed;
+	}
+	&.dashed:hover {
+		border-color: $main-color;
+		color: $main-color;
+	}
+	&.danger {
+		background-color: red;
+		color: #fff;
+	}
+	&.danger:hover {
+		border-color: rgba(red, 0.75);
+		background-color: rgba(red, 0.75);
+	}
+}
