@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter as Router, Route, NavLink } from "react-router-dom";
+import { HashRouter as Router, Route, NavLink, Redirect } from "react-router-dom";
 import Icon from "./lib/icon/icon";
 import IconDemo from "./lib/icon/icon.demo";
 import Button from "./lib/button/button.home";
@@ -45,12 +45,11 @@ ReactDOM.render(
 					</ul>
 				</Aside>
 				<Content className="home-content">
-					{/* <div className="component-container"> */}
-						<Route path="/icon" component={IconDemo}></Route>
-						<Route path="/button" component={Button}></Route>
-						<Route path="/dialog" component={Dialog}></Route>
-						<Route path="/layout" component={LayoutExample}></Route>
-					{/* </div> */}
+					<Route path="/icon" component={IconDemo}></Route>
+					<Route path="/button" component={Button}></Route>
+					<Route path="/dialog" component={Dialog}></Route>
+					<Route path="/layout" component={LayoutExample}></Route>
+					<Route exact path="/"><Redirect to="/button" /></Route>
 				</Content>
 			</Layout>
 			<Footer className="home-footer">
