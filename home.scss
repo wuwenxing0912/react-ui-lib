@@ -168,22 +168,36 @@ $main-color: #007aff;
 		}
 
 		& .api-table {
-			border: 1px solid rgba(0, 0, 0, 0.15);
+			border: 1px solid #f0f0f0;
 			font-size: 14px;
 			color: rgba(0, 0, 0, 0.65);
 			width: 100%;
+			margin: 0 auto;
 			border-collapse: collapse;
-			> tr, th, td {
-				border: 1px solid rgba(0, 0, 0, 0.15);
+			text-align: left;
+			vertical-align: middle;
+			& th:first-child,
+			& td:first-child {
+				border-left: 1px solid #f0f0f0;
 			}
-			& th {
-				background-color: rgba(0, 0, 0, 0.15);
-				padding: 20px 0;
+			& tr {
+				border-top: 1px solid #f0f0f0;
+				border-bottom: 1px solid #f0f0f0;
 			}
+			& th,
 			& td {
-				padding: 8px 10px;
-				text-align:center;
-				vertical-align:middle;
+				font-weight: normal;
+				padding: 16px;
+			}
+			> thead {
+				color: rgba(0, 0, 0, 0.65);
+				background-color: rgba(0, 0, 0, 0.04);
+			}
+			& tbody tr:hover {
+				background-color: rgba(0, 0, 0, 0.02);
+			}
+			& .api-type {
+				color: #c41d7f;
 			}
 		}
 	}

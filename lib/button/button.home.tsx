@@ -16,17 +16,20 @@ const ButtonHome: React.FunctionComponent = () => {
 			<section>
 				<h1>API</h1>
 				<table className="api-table" cellSpacing="0" cellPadding="0">
+					<thead>
 					<tr>
 						<th className="api-table-head">API</th>
-						<th className="api-table-head">描述</th>
-						<th className="api-table-head">参数</th>
+						<th className="api-table-head">说明</th>
+						<th className="api-table-head">类型</th>
 						<th className="api-table-head">是否可选</th>
 						<th className="api-table-head">默认值</th>
 					</tr>
+					</thead>
+					<tbody>
 					<tr>
-						<td className="api-type">type</td>
+						<td className="api-button-type">type</td>
 						<td className="api-type-description">button类型</td>
-						<td className="api-args">
+						<td className="api-type">
 							'default' | 'primary' | 'dashed' | 'danger'
 						</td>
 						<td className="api-nesscery">是</td>
@@ -35,17 +38,18 @@ const ButtonHome: React.FunctionComponent = () => {
 					<tr>
 						<td className="api-classname">className</td>
 						<td className="api-classname-description">自定义类名</td>
-						<td className="api-args"></td>
+						<td className="api-type">string</td>
 						<td className="api-nesscery">否</td>
 						<td className="api-default">---</td>
 					</tr>
 					<tr>
 					<td className="api-style">style</td>
 						<td className="api-style-description">自定义样式</td>
-						<td className="api-args"></td>
+						<td className="api-type">React.CSSProperties</td>
 						<td className="api-nesscery">否</td>
 						<td className="api-default">---</td>
 					</tr>
+					</tbody>
 				</table>
 			</section>
 		</Fragment>
