@@ -11,7 +11,7 @@ const buttonType = `<Button type="default">Default</Button>
 const ButtonHome: React.FunctionComponent = () => {
 	return (
 		<Fragment>
-			{createSection()}
+			{createSection('组件演示')}
 			{createSection()}
 			<section>
 				<h1>API</h1>
@@ -56,13 +56,13 @@ const ButtonHome: React.FunctionComponent = () => {
 	);
 };
 
-const createSection = () => {
+const createSection = (des?: string) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
 	return (
 		<Fragment>
 			<section>
-				<h1>button</h1>
+				{des? <h1>{des}</h1> : ''}
 				<div className="example-container">
 					<Button
 						type="default"
