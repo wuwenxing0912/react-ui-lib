@@ -104,6 +104,9 @@ $main-color: #007aff;
 		max-width: 1000px;
 		padding: 20px;
 		margin: 0px auto;
+		> h1 {
+			margin-bottom: 20px;
+		}
 		& .example-container {
 			margin: 0 auto;
 			border: 1px solid rgba(0, 0, 0, 0.15);
@@ -139,7 +142,7 @@ $main-color: #007aff;
 				color: #fff;
 				border-radius: 2px;
 			}
-			
+
 			& .pop-content::after {
 				content: "";
 				display: inline-block;
@@ -161,6 +164,26 @@ $main-color: #007aff;
 			pre div {
 				padding: 6px 40px;
 				font-family: "Courier New", ui-monospace, -webkit-pictograph;
+			}
+		}
+
+		& .api-table {
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			font-size: 14px;
+			color: rgba(0, 0, 0, 0.65);
+			width: 100%;
+			border-collapse: collapse;
+			> tr, th, td {
+				border: 1px solid rgba(0, 0, 0, 0.15);
+			}
+			& th {
+				background-color: rgba(0, 0, 0, 0.15);
+				padding: 20px 0;
+			}
+			& td {
+				padding: 8px 10px;
+				text-align:center;
+				vertical-align:middle;
 			}
 		}
 	}
