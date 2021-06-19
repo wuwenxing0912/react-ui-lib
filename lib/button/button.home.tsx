@@ -23,16 +23,24 @@ const buttonIcon = `<Button type="default" icon="modify">Default</Button>
 <Button type="dashed" icon="modify">Dashed</Button>
 <Button type="danger" icon="modify">Danger</Button>`;
 
+const buttonSize = `const [size, setSize] = useState("middle");
+<Button type="default" onClick={() => {setSize("large")}}>Default</Button>
+<Button type="primary" onClick={() => {setSize("middle")}}>Primary</Button>
+<Button type="dashed" onClick={() => {setSize("middle")}}>Dashed</Button>
+<Button type="danger" onClick={() => {setSize("small")}}>Danger</Button>`;
+
 const ButtonHome: React.FunctionComponent = () => {
 	const section1 = "按钮有四种类型：默认按钮、主题按钮、虚线按钮以及危险按钮。";
 	const section2 = "按钮禁用：设置按钮 disabled 禁用状态。";
 	const section3 = "图标按钮：设置 icon 属性。";
 	const section4 = "幽灵按钮：常用在有色背景上，按钮背景变为透明。"
+	const section5 = "按钮尺寸：按钮有大、中、小三种尺寸。"
 	return (
 		<Fragment>
 			{createSection("组件和代码演示", false, buttonType, section1)}
 			{createSection("", true, buttonDisabled, section2)}
 			{createSection("", false, buttonGhost, section4, [], true)}
+			{createSectionButtonSize("", buttonSize, section5)}
 			{createSection("", false, buttonIcon, section3, [
 				"setting",
 				"modify",
@@ -88,6 +96,13 @@ const ButtonHome: React.FunctionComponent = () => {
 							<td className="api-type">boolean</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">false</td>
+						</tr>
+						<tr>
+							<td className="api-style">size</td>
+							<td className="api-style-description">按钮尺寸大小</td>
+							<td className="api-type">"large" | "middle" | "small"</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">middle</td>
 						</tr>
 						<tr>
 							<td className="api-style">icon</td>
@@ -169,6 +184,85 @@ const createSection = (
 						onClick={f}
 					>
 						Danger
+					</Button>
+				</div>
+				<div className="description">
+					<span className="text">{description}</span>
+					<span
+						className="code-icon"
+						style={{ display: "inline-flex", cursor: "pointer" }}
+						onClick={() => {
+							setVisble(!visible);
+						}}
+						onMouseEnter={() => {
+							setshowCode(!showCode);
+						}}
+						onMouseLeave={() => {
+							setshowCode(!showCode);
+						}}
+					>
+						<Icon name="code" style={{ height: 19 }}></Icon>
+					</span>
+					<span
+						className="pop-content"
+						style={{ display: showCode ? "inline-block" : "none" }}
+					>
+						{visible ? "收起代码" : "显示代码"}
+					</span>
+				</div>
+				<div
+					className="code-area"
+					style={{ display: visible ? "block" : "none" }}
+				>
+					{createHighlightCode(code as string)}
+				</div>
+			</section>
+		</Fragment>
+	);
+};
+
+const createSectionButtonSize = (
+	h1?: string,
+	code?: string,
+	description?: string,
+) => {
+	const [visible, setVisble] = useState(false);
+	const [showCode, setshowCode] = useState(false);
+	const [size, setSize] = useState("middle");
+	return (
+		<Fragment>
+			<section>
+				{h1 ? <h1>{h1}</h1> : ""}
+				<div className="example-container">
+					<Button
+						style={{ marginRight: 20 }}
+						size = {size as "large"}
+						onClick={() => {setSize("large")}}
+					>
+						Large
+					</Button>
+					<Button
+						type="primary"
+						style={{ marginRight: 20 }}
+						size = {size as "middle"}
+						onClick={() => setSize("middle")}
+					>
+						Middle
+					</Button>
+					<Button
+						type="dashed"
+						style={{ marginRight: 20 }}						
+						size = {size as "middle"}
+						onClick={() => setSize("middle")}
+					>
+						Middle
+					</Button>
+					<Button
+						type="danger"
+						size = {size as "small"}
+						onClick={() => setSize("small")}
+					>
+						Small
 					</Button>
 				</div>
 				<div className="description">

@@ -57,9 +57,9 @@
 	}
 	&.default.ghost {
 		color: #fff;
-    border-color: #fff;
+		border-color: #fff;
 		fill: #fff;
-    background-color: transparent;
+		background-color: transparent;
 	}
 	&.default.ghost:hover {
 		border-color: $main-color;
@@ -79,9 +79,9 @@
 	}
 	&.dashed.ghost {
 		color: #fff;
-    border-color: #fff;
+		border-color: #fff;
 		fill: #fff;
-    background-color: transparent;
+		background-color: transparent;
 	}
 	&.dashed.ghost:hover {
 		border-color: $main-color;
@@ -98,5 +98,14 @@
 		border-color: rgba(red, 0.6);
 		color: rgba(red, 0.6);
 		fill: rgba(red, 0.6);
+	}
+	&.large {
+		height: 40px;
+		padding: 8px 17px;
+	}
+	&.small {
+		height: 30px;
+		font-size: 12px;
+		padding: 4px 12px;
 	}
 }
