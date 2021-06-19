@@ -55,4 +55,48 @@
 		height: 16px;
 		width: 16px;
 	}
+	&.default.ghost {
+		color: #fff;
+    border-color: #fff;
+		fill: #fff;
+    background-color: transparent;
+	}
+	&.default.ghost:hover {
+		border-color: $main-color;
+		color: $main-color;
+		fill: $main-color;
+	}
+	&.primary.ghost {
+		background-color: transparent;
+		color: $main-color;
+		fill: $main-color;
+		border-color: $main-color;
+	}
+	&.primary.ghost:hover {
+		border-color: rgba($main-color, 0.75);
+		color: rgba($main-color, 0.75);
+		fill: rgba($main-color, 0.75);
+	}
+	&.dashed.ghost {
+		color: #fff;
+    border-color: #fff;
+		fill: #fff;
+    background-color: transparent;
+	}
+	&.dashed.ghost:hover {
+		border-color: $main-color;
+		color: $main-color;
+		fill: $main-color;
+	}
+	&.danger.ghost {
+		background-color: transparent;
+		color: rgba(red, 0.75);
+		fill: rgba(red, 0.75);
+		border-color: rgba(red, 0.75);
+	}
+	&.danger.ghost:hover {
+		border-color: rgba(red, 0.6);
+		color: rgba(red, 0.6);
+		fill: rgba(red, 0.6);
+	}
 }

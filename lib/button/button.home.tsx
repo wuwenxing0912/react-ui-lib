@@ -13,6 +13,11 @@ const buttonDisabled = `<Button type="default" disabled={true}>Default</Button>
 <Button type="dashed" disabled={true}>Dashed</Button>
 <Button type="danger" disabled={true}>Danger</Button>`;
 
+const buttonGhost = `<Button type="default" ghost={true}>Default</Button>
+<Button type="primary" ghost={true}>Primary</Button>
+<Button type="dashed" ghost={true}>Dashed</Button>
+<Button type="danger" ghost={true}>Danger</Button>`;
+
 const buttonIcon = `<Button type="default" icon="modify">Default</Button>
 <Button type="primary" icon="modify">Primary</Button>
 <Button type="dashed" icon="modify">Dashed</Button>
@@ -22,10 +27,12 @@ const ButtonHome: React.FunctionComponent = () => {
 	const section1 = "按钮有四种类型：默认按钮、主题按钮、虚线按钮以及危险按钮。";
 	const section2 = "按钮禁用：设置按钮 disabled 禁用状态。";
 	const section3 = "图标按钮：设置 icon 属性。";
+	const section4 = "幽灵按钮：常用在有色背景上，按钮背景变为透明。"
 	return (
 		<Fragment>
 			{createSection("组件和代码演示", false, buttonType, section1)}
 			{createSection("", true, buttonDisabled, section2)}
+			{createSection("", false, buttonGhost, section4, [], true)}
 			{createSection("", false, buttonIcon, section3, [
 				"setting",
 				"modify",
@@ -76,6 +83,13 @@ const ButtonHome: React.FunctionComponent = () => {
 							<td className="api-default">false</td>
 						</tr>
 						<tr>
+							<td className="api-style">ghost</td>
+							<td className="api-style-description">幽灵按钮，背景透明</td>
+							<td className="api-type">boolean</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">false</td>
+						</tr>
+						<tr>
 							<td className="api-style">icon</td>
 							<td className="api-style-description">自定义按钮图标</td>
 							<td className="api-type">string</td>
@@ -101,23 +115,28 @@ const createSection = (
 	disabled?: boolean,
 	code?: string,
 	description?: string,
-	icon?: (string | undefined)[]
+	icon?: (string | undefined)[],
+	ghost?: boolean
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
 	const f = (e: React.MouseEvent) => {
 		console.log(e.type);
 	};
+	const containerGhostStyle = ghost && {
+		background: "rgb(190, 200, 200)"
+	};
 	return (
 		<Fragment>
 			<section>
 				{h1 ? <h1>{h1}</h1> : ""}
-				<div className="example-container">
+				<div className="example-container" style={containerGhostStyle as object}>
 					<Button
 						className="default"
 						style={{ marginRight: 20 }}
 						disabled={disabled}
 						icon={icon && icon[1]}
+						ghost={ghost}
 						onClick={f}
 					>
 						Default
@@ -127,6 +146,7 @@ const createSection = (
 						style={{ marginRight: 20 }}
 						disabled={disabled}
 						icon={icon && icon[1]}
+						ghost={ghost}
 						onClick={f}
 					>
 						Primary
@@ -136,15 +156,16 @@ const createSection = (
 						style={{ marginRight: 20 }}
 						disabled={disabled}
 						icon={icon && icon[1]}
+						ghost={ghost}
 						onClick={f}
 					>
 						Dashed
 					</Button>
 					<Button
 						type="danger"
-						style={{ marginRight: 20 }}
 						disabled={disabled}
 						icon={icon && icon[1]}
+						ghost={ghost}
 						onClick={f}
 					>
 						Danger
