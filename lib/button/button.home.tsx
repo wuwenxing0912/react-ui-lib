@@ -21,11 +21,17 @@ const buttonIcon = `<Button type="default" icon="modify">Default</Button>
 const ButtonHome: React.FunctionComponent = () => {
 	const section1 = "按钮有四种类型：默认按钮、主题按钮、虚线按钮以及危险按钮。";
 	const section2 = "按钮禁用：设置按钮 disabled 禁用状态";
+	const section3 = "图标按钮：设置 icon 属性";
 	return (
 		<Fragment>
 			{createSection("组件和代码演示", false, buttonType, section1)}
 			{createSection("", true, buttonDisabled, section2)}
-			{createSection("", false, buttonIcon, section1, ["setting","modify","sign-out", "warn"])}
+			{createSection("", false, buttonIcon, section3, [
+				"setting",
+				"modify",
+				"sign-out",
+				"warn",
+			])}
 			<section>
 				<h1>API</h1>
 				<table className="api-table" cellSpacing="0" cellPadding="0">
@@ -76,6 +82,13 @@ const ButtonHome: React.FunctionComponent = () => {
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
 						</tr>
+						<tr>
+							<td className="api-style">onClick</td>
+							<td className="api-style-description">点击按钮时的回调</td>
+							<td className="api-type">React.MouseEventHandler</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
 					</tbody>
 				</table>
 			</section>
@@ -92,6 +105,9 @@ const createSection = (
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
+	const f = (e: React.MouseEvent) => {
+		console.log(e.type);
+	};
 	return (
 		<Fragment>
 			<section>
@@ -102,6 +118,7 @@ const createSection = (
 						style={{ marginRight: 20 }}
 						disabled={disabled}
 						icon={icon && icon[1]}
+						onClick={f}
 					>
 						Default
 					</Button>
@@ -110,6 +127,7 @@ const createSection = (
 						style={{ marginRight: 20 }}
 						disabled={disabled}
 						icon={icon && icon[1]}
+						onClick={f}
 					>
 						Primary
 					</Button>
@@ -118,6 +136,7 @@ const createSection = (
 						style={{ marginRight: 20 }}
 						disabled={disabled}
 						icon={icon && icon[1]}
+						onClick={f}
 					>
 						Dashed
 					</Button>
@@ -126,6 +145,7 @@ const createSection = (
 						style={{ marginRight: 20 }}
 						disabled={disabled}
 						icon={icon && icon[1]}
+						onClick={f}
 					>
 						Danger
 					</Button>

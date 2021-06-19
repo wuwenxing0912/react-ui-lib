@@ -9,6 +9,7 @@ interface Props {
 	style?: React.CSSProperties;
 	disabled?: boolean;
 	icon?: string;
+	onClick?: React.MouseEventHandler;
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
@@ -17,10 +18,14 @@ const Button: React.FunctionComponent<Props> = (props) => {
 	const icon = props.icon && (
 		<Icon name={props.icon}></Icon>
 	);
+	const onClick = (e: React.MouseEvent) => {
+		if (disabled) return e.preventDefault();
+		props.onClick && props.onClick.call(e.target, e);
+	}
 	const buttonClassName = classes("x-button", type, className, disabled);
 	return (
 		<Fragment>
-			<button className={buttonClassName} {...rest}>
+			<button className={buttonClassName} onClick={onClick} {...rest}>
 				{icon}
 				<span className="text">{props.children}</span>
 			</button>
