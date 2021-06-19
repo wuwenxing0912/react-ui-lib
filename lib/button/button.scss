@@ -15,10 +15,12 @@
 	&.default:hover {
 		border-color: $main-color;
 		color: $main-color;
+		fill: $main-color;
 	}
 	&.primary {
 		background-color: $main-color;
 		color: #fff;
+		fill: #fff;
 	}
 	&.primary:hover {
 		border-color: rgba($main-color, 0.85);
@@ -30,10 +32,12 @@
 	&.dashed:hover {
 		border-color: $main-color;
 		color: $main-color;
+		fill: $main-color;
 	}
 	&.danger {
 		background-color: red;
 		color: #fff;
+		fill: #fff;
 	}
 	&.danger:hover {
 		border-color: rgba(red, 0.75);
@@ -45,5 +49,9 @@
 		color: #00000040;
 		background: #f5f5f5;
 		border-color: #d9d9d9;
+	}
+	& .icon {
+		height: 16px;
+		width: 16px;
 	}
 }

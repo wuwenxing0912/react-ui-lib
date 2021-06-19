@@ -13,6 +13,11 @@ const buttonDisabled = `<Button type="default" disabled={true}>Default</Button>
 <Button type="dashed" disabled={true}>Dashed</Button>
 <Button type="danger" disabled={true}>Danger</Button>`;
 
+const buttonIcon = `<Button type="default" icon="modify">Default</Button>
+<Button type="primary" icon="modify">Primary</Button>
+<Button type="dashed" icon="modify">Dashed</Button>
+<Button type="danger" icon="modify">Danger</Button>`;
+
 const ButtonHome: React.FunctionComponent = () => {
 	const section1 = "按钮有四种类型：默认按钮、主题按钮、虚线按钮以及危险按钮。";
 	const section2 = "按钮禁用：设置按钮 disabled 禁用状态";
@@ -20,6 +25,7 @@ const ButtonHome: React.FunctionComponent = () => {
 		<Fragment>
 			{createSection("组件和代码演示", false, buttonType, section1)}
 			{createSection("", true, buttonDisabled, section2)}
+			{createSection("", false, buttonIcon, section1, ["setting","modify","sign-out", "warn"])}
 			<section>
 				<h1>API</h1>
 				<table className="api-table" cellSpacing="0" cellPadding="0">
@@ -63,6 +69,13 @@ const ButtonHome: React.FunctionComponent = () => {
 							<td className="api-nesscery">是</td>
 							<td className="api-default">false</td>
 						</tr>
+						<tr>
+							<td className="api-style">icon</td>
+							<td className="api-style-description">自定义按钮图标</td>
+							<td className="api-type">string</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
 					</tbody>
 				</table>
 			</section>
@@ -74,7 +87,8 @@ const createSection = (
 	h1?: string,
 	disabled?: boolean,
 	code?: string,
-	description?: string
+	description?: string,
+	icon?: (string | undefined)[]
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
@@ -87,6 +101,7 @@ const createSection = (
 						className="default"
 						style={{ marginRight: 20 }}
 						disabled={disabled}
+						icon={icon && icon[1]}
 					>
 						Default
 					</Button>
@@ -94,13 +109,24 @@ const createSection = (
 						type="primary"
 						style={{ marginRight: 20 }}
 						disabled={disabled}
+						icon={icon && icon[1]}
 					>
 						Primary
 					</Button>
-					<Button type="dashed" style={{ marginRight: 20 }} disabled={disabled}>
+					<Button
+						type="dashed"
+						style={{ marginRight: 20 }}
+						disabled={disabled}
+						icon={icon && icon[1]}
+					>
 						Dashed
 					</Button>
-					<Button type="danger" style={{ marginRight: 20 }} disabled={disabled}>
+					<Button
+						type="danger"
+						style={{ marginRight: 20 }}
+						disabled={disabled}
+						icon={icon && icon[1]}
+					>
 						Danger
 					</Button>
 				</div>
