@@ -20,8 +20,8 @@ const buttonIcon = `<Button type="default" icon="modify">Default</Button>
 
 const ButtonHome: React.FunctionComponent = () => {
 	const section1 = "按钮有四种类型：默认按钮、主题按钮、虚线按钮以及危险按钮。";
-	const section2 = "按钮禁用：设置按钮 disabled 禁用状态";
-	const section3 = "图标按钮：设置 icon 属性";
+	const section2 = "按钮禁用：设置按钮 disabled 禁用状态。";
+	const section3 = "图标按钮：设置 icon 属性。";
 	return (
 		<Fragment>
 			{createSection("组件和代码演示", false, buttonType, section1)}
