@@ -37,7 +37,7 @@ const ButtonHome: React.FunctionComponent = () => {
 	const section5 = "按钮尺寸：按钮有大、中、小三种尺寸。"
 	return (
 		<Fragment>
-			{createSection("组件和代码演示", false, buttonType, section1)}
+			{createSection("组件和代码示例", false, buttonType, section1)}
 			{createSection("", true, buttonDisabled, section2)}
 			{createSection("", false, buttonGhost, section4, [], true)}
 			{createSectionButtonSize("", buttonSize, section5)}
