@@ -62,9 +62,9 @@ const ButtonHome: React.FunctionComponent = () => {
 					<tbody>
 						<tr>
 							<td className="api-button-type">type</td>
-							<td className="api-type-description">button类型</td>
+							<td className="api-type-description">设置button的样式</td>
 							<td className="api-type">
-								'default' | 'primary' | 'dashed' | 'danger'
+								"default" | "primary" | "dashed" | "danger"
 							</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">default</td>
@@ -117,6 +117,13 @@ const ButtonHome: React.FunctionComponent = () => {
 							<td className="api-type">React.MouseEventHandler</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
+						</tr>
+						<tr>
+							<td className="api-style">buttonType</td>
+							<td className="api-style-description">设置原生button的type属性</td>
+							<td className="api-type">"button" | "submit" | "reset"</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">button</td>
 						</tr>
 					</tbody>
 				</table>

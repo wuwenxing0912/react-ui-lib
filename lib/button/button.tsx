@@ -11,11 +11,12 @@ interface Props {
 	icon?: string;
 	onClick?: React.MouseEventHandler;
 	ghost?: boolean,
-	size?: "large" | "middle" | "small"
+	size?: "large" | "middle" | "small",
+	buttonType?: "button" | "submit" | "reset"
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
-	const { type, className, ...rest } = props;
+	const { type, className, buttonType, ...rest} = props;
 	const disabled = props.disabled ? "disabled" : undefined;
 	const ghost = props.ghost ? "ghost" : undefined;
 	const size = props.size ? props.size : "middle";
@@ -29,7 +30,7 @@ const Button: React.FunctionComponent<Props> = (props) => {
 	const buttonClassName = classes("x-button", type, className, disabled, ghost, size);
 	return (
 		<Fragment>
-			<button className={buttonClassName} onClick={onClick} {...rest}>
+			<button className={buttonClassName} onClick={onClick} type={buttonType} {...rest}>
 				{icon}
 				<span className="text">{props.children}</span>
 			</button>
@@ -41,7 +42,8 @@ Button.defaultProps = {
 	type: "default",
 	disabled: false,
 	ghost: false,
-	size: "middle"
+	size: "middle",
+	buttonType: "button"
 };
 
 export default Button;
