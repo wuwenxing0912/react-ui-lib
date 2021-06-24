@@ -1,4 +1,5 @@
 .x-form {
+	width: 100%;
 	> .form-table {
 		border-collapse: collapse;
 		& td {
@@ -22,4 +23,44 @@
 			margin-top: 4px;
 		}
 	}
+
+	> .v-layout {
+		& .v-input-wrapper {
+			& .v-lable {
+				padding-bottom: 8px;
+			}
+			& .v-input {
+				padding-bottom: 6px;
+				> input {
+					width: 100%;
+				}
+			}
+			& .errors {
+				color: red;
+				font-size: 0.8em;
+				margin-top: 8px;
+			}
+		}
+	}
+
+  > .i-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    > .i-input-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & .i-input {
+        margin-left: 8px;
+      }
+      & .errors {
+        position: absolute;
+        color: red;
+				font-size: 0.8em;
+				margin-top: 6px;
+      }
+    }
+  }
 }
