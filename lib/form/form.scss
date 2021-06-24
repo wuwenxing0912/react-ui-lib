@@ -1,7 +1,12 @@
 .x-form {
-	& .form-table {
+	> .form-table {
+		border-collapse: collapse;
 		& td {
-			padding-bottom: 16px;
+			vertical-align: top;
+			padding-bottom: 8px;
+		}
+		& .td-lable {
+			line-height: 32px;
 		}
 		& .td-input,
 		& .td-buttons {
@@ -10,6 +15,11 @@
 		& .td-buttons-fill,
 		& .td-buttons {
 			padding-bottom: 0;
+		}
+		& .errors {
+			color: red;
+			font-size: 0.8em;
+			margin-top: 4px;
 		}
 	}
 }

@@ -42,7 +42,13 @@ const Form: React.FunctionComponent<Props> = (props) => {
 									value={formData[field.name]}
 									onChange={(e) => onInputChange(field.name, e.target.value)}
 								/>
-								<div>{props.errors[field.name]}</div>
+								<div className="errors">
+									{props.errors[field.name] ? (
+										props.errors[field.name].join("，")
+									) : (
+										<span>&nbsp;</span>
+									)}
+								</div>
 							</td>
 						</tr>
 					))}
