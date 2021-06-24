@@ -1,0 +1,17 @@
+@import "../_theme_color.scss";
+.x-input {
+	line-height: 22px;
+	padding: 4px 8px;
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	font-size: 16px;
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	&:focus, &:hover {
+		outline: none;
+		border: 1px solid $main-color;
+	}
+	&:focus {
+		box-shadow: 0 0 3px 0 rgba($main-color, 0.75);
+	}
+}
