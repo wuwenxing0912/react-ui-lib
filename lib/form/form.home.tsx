@@ -22,7 +22,7 @@ const FromHome: React.FunctionComponent = () => {
 			{ key: "password", required: true },
 		];
 		const errors = Validator(formData, rules);
-    setErrors(errors)
+		setErrors(errors);
 		console.log(errors);
 	};
 	return (
@@ -35,13 +35,17 @@ const FromHome: React.FunctionComponent = () => {
 						fields={fields}
 						buttons={
 							<Fragment>
-								<Button type="primary" buttonType="submit">
+								<Button
+									type="primary"
+									buttonType="submit"
+									style={{ lineHeight: "22px", marginRight: "20px" }}
+								>
 									提交
 								</Button>
-								<Button>取消</Button>
+								<Button style={{ lineHeight: "22px" }}>取消</Button>
 							</Fragment>
 						}
-            errors={errors}
+						errors={errors}
 						onChange={(newValue) => setFormData(newValue)}
 						onSubmit={onSubmit}
 					></Form>

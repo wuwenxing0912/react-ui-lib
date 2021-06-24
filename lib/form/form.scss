@@ -1,0 +1,15 @@
+.x-form {
+	& .form-table {
+		& td {
+			padding-bottom: 16px;
+		}
+		& .td-input,
+		& .td-buttons {
+			padding-left: 16px;
+		}
+		& .td-buttons-fill,
+		& .td-buttons {
+			padding-bottom: 0;
+		}
+	}
+}
