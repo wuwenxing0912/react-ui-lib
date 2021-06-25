@@ -69,6 +69,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
 					<div className="v-input">
 						<Input
 							id={field.name}
+							className="vertical-input-width"
 							type={field.input.type}
 							value={formData[field.name]}
 							onChange={(e) => onInputChange(field.name, e.target.value)}
