@@ -7,6 +7,7 @@ import Button from "./lib/button/button.home";
 import Dialog from "./lib/dialog/dialog.home";
 import LayoutExample from "./lib/layout/layout.example";
 import { Aside, Content, Footer, Header, Layout } from "./lib/layout/layout";
+import Input from "./lib/input/input.home";
 import Form from "./lib/form/form.home";
 import "./home.scss";
 
@@ -38,6 +39,9 @@ ReactDOM.render(
 							<NavLink to="/button">Button 按钮</NavLink>
 						</li>
 						<li>
+							<NavLink to="/input">Input 输入框</NavLink>
+						</li>
+						<li>
 							<NavLink to="/form">Form 表单</NavLink>
 						</li>
 						<li>
@@ -51,6 +55,7 @@ ReactDOM.render(
 				<Content className="home-content">
 					<Route path="/icon" component={IconDemo}></Route>
 					<Route path="/button" component={Button}></Route>
+					<Route path="/input" component={Input}></Route>
 					<Route path="/form" component={Form}></Route>
 					<Route path="/dialog" component={Dialog}></Route>
 					<Route path="/layout" component={LayoutExample}></Route>
