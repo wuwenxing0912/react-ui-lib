@@ -12,7 +12,7 @@ const inputHome: React.FunctionComponent = () => {
     <Fragment>
       {createSection("组件和代码示例", defaultInput, "输入框的基本用法", {placeholder: "placeholder"})}
       {createSection("", disabledInput, "输入框禁用状态", {placeholder: "disabled", disabled: true})}
-      {createSection("", fixInput, "带有前/后缀图标的输入框", {prefix: "modify", suffix: "modify"})}
+      {createSectionOfInputFix("", fixInput, "带有前/后缀图标的输入框", {prefix: "modify", suffix: "modify"})}
       <section>
 				<h1>API</h1>
 				<table className="api-table" cellSpacing="0" cellPadding="0">
@@ -97,6 +97,52 @@ const createSection = (h1?: string, code?: string, description?: string, options
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
 				<Input {...options}></Input>
+			</div>
+			<div className="description">
+				<span className="text">{description}</span>
+				<span
+					className="code-icon"
+					style={{ display: "inline-flex", cursor: "pointer" }}
+					onClick={() => {
+						setVisble(!visible);
+					}}
+					onMouseEnter={() => {
+						setshowCode(!showCode);
+					}}
+					onMouseLeave={() => {
+						setshowCode(!showCode);
+					}}
+				>
+					<Icon name="code" style={{ height: 19 }}></Icon>
+				</span>
+				<span
+					className="pop-content"
+					style={{ display: showCode ? "inline-block" : "none" }}
+				>
+					{visible ? "收起代码" : "显示代码"}
+				</span>
+			</div>
+			<div
+				className="code-area"
+				style={{ display: visible ? "block" : "none" }}
+			>
+				{createHighlightCode(code as string)}
+			</div>
+		</section>
+	);
+};
+
+const createSectionOfInputFix = (h1?: string, code?: string, description?: string, options?: {[k: string]: any}) => {
+	const [visible, setVisble] = useState(false);
+	const [showCode, setshowCode] = useState(false);
+	const {prefix, suffix, ...rest} = options! 
+	return (
+		<section>
+			{h1 ? <h1>{h1}</h1> : ""}
+			<div className="example-container-fix">
+				<Input prefix={prefix} {...rest}></Input>
+				<div style ={{marginBottom:"32px"}} ></div>
+				<Input suffix={suffix} {...rest}></Input>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>
