@@ -12,7 +12,7 @@ const inputHome: React.FunctionComponent = () => {
     <Fragment>
       {createSection("组件和代码示例", defaultInput, "输入框的基本用法", {placeholder: "placeholder"})}
       {createSection("", disabledInput, "输入框禁用状态", {placeholder: "disabled", disabled: true})}
-      {createSectionOfInputFix("", fixInput, "带有前/后缀图标的输入框", {prefix: "modify", suffix: "modify"})}
+      {createSectionOfInputFix("", fixInput, "带有前/后缀图标的输入框", {prefix: "username", suffix: "password"})}
       <section>
 				<h1>API</h1>
 				<table className="api-table" cellSpacing="0" cellPadding="0">
