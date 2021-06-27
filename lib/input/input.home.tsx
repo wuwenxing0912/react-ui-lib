@@ -5,15 +5,26 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 
 const defaultInput = `<Input placeholder="placeholder"></Input>`;
 const disabledInput = `<Input disabled={true}></Input>`;
-const fixInput = `<Input prefix="modify", suffix="modify"></Input>`;
+const fixInput = `<Input prefix="username"></Input>
+<Input suffix="password"></Input>`;
 
 const inputHome: React.FunctionComponent = () => {
-  return (
-    <Fragment>
-      {createSection("组件和代码示例", defaultInput, "输入框的基本用法", {placeholder: "placeholder"})}
-      {createSection("", disabledInput, "输入框禁用状态", {placeholder: "disabled", disabled: true})}
-      {createSectionOfInputFix("", fixInput, "带有前/后缀图标的输入框", {prefix: "username", suffix: "password"})}
-      <section>
+	return (
+		<Fragment>
+			{createSection("组件和代码示例", defaultInput, "输入框的基本用法", {
+				placeholder: "placeholder",
+			})}
+			{createSection("", disabledInput, "输入框禁用状态", {
+				placeholder: "disabled",
+				disabled: true,
+			})}
+			{createSectionOfInputFix("", fixInput, "带有前/后缀图标的输入框", {
+				prefix: "username",
+				username: "username",
+				suffix: "password",
+				password: "password",
+			})}
+			<section>
 				<h1>API</h1>
 				<table className="api-table" cellSpacing="0" cellPadding="0">
 					<thead>
@@ -54,7 +65,7 @@ const inputHome: React.FunctionComponent = () => {
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
 						</tr>
-            <tr>
+						<tr>
 							<td className="api-style">value</td>
 							<td className="api-style-description">输入框的value</td>
 							<td className="api-type">string</td>
@@ -85,11 +96,16 @@ const inputHome: React.FunctionComponent = () => {
 					</tbody>
 				</table>
 			</section>
-    </Fragment>
-  )
+		</Fragment>
+	);
 };
 
-const createSection = (h1?: string, code?: string, description?: string, options?: {[k: string]: any}) => {
+const createSection = (
+	h1?: string,
+	code?: string,
+	description?: string,
+	options?: { [k: string]: any }
+) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
 	return (
@@ -132,17 +148,22 @@ const createSection = (h1?: string, code?: string, description?: string, options
 	);
 };
 
-const createSectionOfInputFix = (h1?: string, code?: string, description?: string, options?: {[k: string]: any}) => {
+const createSectionOfInputFix = (
+	h1?: string,
+	code?: string,
+	description?: string,
+	options?: { [k: string]: any }
+) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
-	const {prefix, suffix, ...rest} = options! 
+	const { prefix, username, suffix, password, ...rest } = options!;
 	return (
 		<section>
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container-fix">
-				<Input prefix={prefix} {...rest}></Input>
-				<div style ={{marginBottom:"32px"}} ></div>
-				<Input suffix={suffix} {...rest}></Input>
+				<Input prefix={prefix} placeholder={username} {...rest}></Input>
+				<div style={{ marginBottom: "32px" }}></div>
+				<Input suffix={suffix} placeholder={password} {...rest}></Input>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>
