@@ -12,13 +12,20 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 	disabled?: boolean;
 	prefix?: string;
 	suffix?: string;
+	error?: boolean;
 }
 
 const Input: React.FunctionComponent<Props> = (props) => {
-	const { className, value, disabled, prefix, suffix, ...rest } = props;
+	const { className, value, disabled, prefix, suffix, error, ...rest } = props;
 	const prefixClassName = prefix && "prefix";
 	const suffixClassName = suffix && "suffix";
-	const inputWrapperClassName = classes("x-input-wrapper", className, prefixClassName, suffixClassName);
+	const errorClassName = error ? "error" : "";
+	const inputWrapperClassName = classes(
+		"x-input-wrapper",
+		className,
+		prefixClassName,
+		suffixClassName
+	);
 	return (
 		<span className={inputWrapperClassName}>
 			{prefix ? (
@@ -28,7 +35,12 @@ const Input: React.FunctionComponent<Props> = (props) => {
 			) : (
 				""
 			)}
-			<input value={value} className="x-input" disabled={disabled} {...rest} />
+			<input
+				value={value}
+				className={classes("x-input", errorClassName)}
+				disabled={disabled}
+				{...rest}
+			/>
 			{suffix ? (
 				<span className="suffix-wrapper">
 					<Icon name={suffix} className="suffix-icon" />
@@ -38,6 +50,10 @@ const Input: React.FunctionComponent<Props> = (props) => {
 			)}
 		</span>
 	);
+};
+
+Input.defaultProps = {
+	error: false,
 };
 
 export default Input;
