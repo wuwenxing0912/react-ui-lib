@@ -14,7 +14,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 	suffix?: string;
 	error?: boolean;
 	addOnBefore?: string;
-	addOnAfter?: string
+	addOnAfter?: string;
 }
 
 const Input: React.FunctionComponent<Props> = (props) => {
@@ -68,6 +68,7 @@ const Input: React.FunctionComponent<Props> = (props) => {
 };
 
 Input.defaultProps = {
+	disabled: false,
 	error: false,
 };
 
