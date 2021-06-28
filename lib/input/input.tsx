@@ -13,13 +13,26 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 	prefix?: string;
 	suffix?: string;
 	error?: boolean;
+	addOnBefore?: string;
+	addOnAfter?: string
 }
 
 const Input: React.FunctionComponent<Props> = (props) => {
-	const { className, value, disabled, prefix, suffix, error, ...rest } = props;
+	const {
+		className,
+		value,
+		disabled,
+		prefix,
+		suffix,
+		error,
+		addOnBefore,
+		addOnAfter,
+		...rest
+	} = props;
 	const prefixClassName = prefix && "prefix";
 	const suffixClassName = suffix && "suffix";
 	const errorClassName = error ? "error" : "";
+	const addOnAfterClassName = addOnAfter ? "after-text" : "";
 	const inputWrapperClassName = classes(
 		"x-input-wrapper",
 		className,
@@ -28,6 +41,7 @@ const Input: React.FunctionComponent<Props> = (props) => {
 	);
 	return (
 		<span className={inputWrapperClassName}>
+			{addOnBefore ? <span className="before-text">{addOnBefore}</span> : ""}
 			{prefix ? (
 				<span className="prefix-wrapper">
 					<Icon name={prefix} className="prefix-icon" />
@@ -37,7 +51,7 @@ const Input: React.FunctionComponent<Props> = (props) => {
 			)}
 			<input
 				value={value}
-				className={classes("x-input", errorClassName)}
+				className={classes("x-input", errorClassName, addOnAfterClassName)}
 				disabled={disabled}
 				{...rest}
 			/>
@@ -48,6 +62,7 @@ const Input: React.FunctionComponent<Props> = (props) => {
 			) : (
 				""
 			)}
+			{addOnAfter ? <span className="after-text">{addOnAfter}</span> : ""}
 		</span>
 	);
 };
