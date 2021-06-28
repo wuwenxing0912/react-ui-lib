@@ -8,6 +8,9 @@ const disabledInput = `<Input disabled={true} placeholder="disabled"></Input>`;
 const fixInput = `<Input prefix="username" placeholder="username"></Input>
 <Input suffix="password" placeholder="password"></Input>`;
 const errorInput = `<Input error={true} placeholder="error"></Input>`;
+const addOnInput = `<Input addOnBefore="Before" addOnAfter="After" placeholder="placeholder"></Input>
+<Input addOnBefore="Before" placeholder="placeholder"></Input>
+<Input addOnAfter="After" placeholder="placeholder"></Input>`;
 
 const inputHome: React.FunctionComponent = () => {
 	return (
@@ -28,6 +31,11 @@ const inputHome: React.FunctionComponent = () => {
 			{createSection("", errorInput, "输入框错误状态", {
 				placeholder: "error",
 				error: true,
+			})}
+			{createSectionOfInputAddOn("", addOnInput, "输入框前/后标签", {
+				placeholder: "placeholder",
+				addOnBefore: "Before",
+				addOnAfter: "After"
 			})}
 			<section>
 				<h1>API</h1>
@@ -125,6 +133,59 @@ const createSection = (
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
 				<Input {...options}></Input>
+			</div>
+			<div className="description">
+				<span className="text">{description}</span>
+				<span
+					className="code-icon"
+					style={{ display: "inline-flex", cursor: "pointer" }}
+					onClick={() => {
+						setVisble(!visible);
+					}}
+					onMouseEnter={() => {
+						setshowCode(!showCode);
+					}}
+					onMouseLeave={() => {
+						setshowCode(!showCode);
+					}}
+				>
+					<Icon name="code" style={{ height: 19 }}></Icon>
+				</span>
+				<span
+					className="pop-content"
+					style={{ display: showCode ? "inline-block" : "none" }}
+				>
+					{visible ? "收起代码" : "显示代码"}
+				</span>
+			</div>
+			<div
+				className="code-area"
+				style={{ display: visible ? "block" : "none" }}
+			>
+				{createHighlightCode(code as string)}
+			</div>
+		</section>
+	);
+};
+
+const createSectionOfInputAddOn = (
+	h1?: string,
+	code?: string,
+	description?: string,
+	options?: { [k: string]: any }
+) => {
+	const [visible, setVisble] = useState(false);
+	const [showCode, setshowCode] = useState(false);
+	const { addOnBefore, addOnAfter, ...rest } = options!;
+	return (
+		<section>
+			{h1 ? <h1>{h1}</h1> : ""}
+			<div className="example-container-fix">
+				<Input addOnBefore={addOnBefore} addOnAfter={addOnAfter} {...rest}></Input>				
+				<div style={{ marginBottom: "32px" }}></div>
+				<Input addOnAfter={addOnAfter} {...rest}></Input>
+				<div style={{ marginBottom: "32px" }}></div>
+				<Input addOnBefore={addOnBefore} {...rest}></Input>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>
