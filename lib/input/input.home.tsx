@@ -32,7 +32,7 @@ const inputHome: React.FunctionComponent = () => {
 				placeholder: "error",
 				error: true,
 			})}
-			{createSectionOfInputAddOn("", addOnInput, "输入框前/后标签", {
+			{createSectionOfInputAddOn("", addOnInput, "输入框前/后缀标签", {
 				placeholder: "placeholder",
 				addOnBefore: "Before",
 				addOnAfter: "After"
@@ -112,6 +112,20 @@ const inputHome: React.FunctionComponent = () => {
 							<td className="api-type">boolean</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">false</td>
+						</tr>
+						<tr>
+							<td className="api-style">addOnBefore</td>
+							<td className="api-style-description">输入框前缀标签</td>
+							<td className="api-type">string</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
+						<tr>
+							<td className="api-style">addOnAfter</td>
+							<td className="api-style-description">输入框后缀标签</td>
+							<td className="api-type">string</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
 						</tr>
 					</tbody>
 				</table>
