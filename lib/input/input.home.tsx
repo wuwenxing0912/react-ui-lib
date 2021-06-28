@@ -4,10 +4,10 @@ import Icon from "../icon/icon";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
 const defaultInput = `<Input placeholder="placeholder"></Input>`;
-const disabledInput = `<Input disabled={true}></Input>`;
-const fixInput = `<Input prefix="username"></Input>
-<Input suffix="password"></Input>`;
-const errorInput = `<Input error={true}></Input>`;
+const disabledInput = `<Input disabled={true} placeholder="disabled"></Input>`;
+const fixInput = `<Input prefix="username" placeholder="username"></Input>
+<Input suffix="password" placeholder="password"></Input>`;
+const errorInput = `<Input error={true} placeholder="error"></Input>`;
 
 const inputHome: React.FunctionComponent = () => {
 	return (
