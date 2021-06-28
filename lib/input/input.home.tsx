@@ -98,6 +98,13 @@ const inputHome: React.FunctionComponent = () => {
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
 						</tr>
+						<tr>
+							<td className="api-style">error</td>
+							<td className="api-style-description">输入框后缀错误状态</td>
+							<td className="api-type">boolean</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">false</td>
+						</tr>
 					</tbody>
 				</table>
 			</section>
