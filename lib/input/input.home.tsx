@@ -35,7 +35,7 @@ const inputHome: React.FunctionComponent = () => {
 			{createSectionOfInputAddOn("", addOnInput, "输入框前/后缀标签", {
 				placeholder: "placeholder",
 				addOnBefore: "Before",
-				addOnAfter: "After"
+				addOnAfter: "After",
 			})}
 			<section>
 				<h1>API</h1>
@@ -195,7 +195,11 @@ const createSectionOfInputAddOn = (
 		<section>
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container-fix">
-				<Input addOnBefore={addOnBefore} addOnAfter={addOnAfter} {...rest}></Input>				
+				<Input
+					addOnBefore={addOnBefore}
+					addOnAfter={addOnAfter}
+					{...rest}
+				></Input>
 				<div style={{ marginBottom: "32px" }}></div>
 				<Input addOnAfter={addOnAfter} {...rest}></Input>
 				<div style={{ marginBottom: "32px" }}></div>
