@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, NavLink, Redirect } from "react-router-dom";
 import Icon from "./lib/icon/icon";
-import IconDemo from "./lib/icon/icon.demo";
 import Button from "./lib/button/button.home";
 import Dialog from "./lib/dialog/dialog.home";
 import LayoutExample from "./lib/layout/layout.example";
@@ -33,9 +32,6 @@ ReactDOM.render(
 					<h2>组件</h2>
 					<ul>
 						<li>
-							<NavLink to="/icon">Icon 图标</NavLink>
-						</li>
-						<li>
 							<NavLink to="/button">Button 按钮</NavLink>
 						</li>
 						<li>
@@ -53,7 +49,6 @@ ReactDOM.render(
 					</ul>
 				</Aside>
 				<Content className="home-content">
-					<Route path="/icon" component={IconDemo}></Route>
 					<Route path="/button" component={Button}></Route>
 					<Route path="/input" component={Input}></Route>
 					<Route path="/form" component={Form}></Route>
