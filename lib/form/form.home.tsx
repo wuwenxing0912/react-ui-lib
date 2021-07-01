@@ -105,9 +105,9 @@ const FromHome: React.FunctionComponent = () => {
 			<section>
 			<div className="example-container" style={{position:"relative", paddingTop: '80px'}}>
 				<div style={{position: "absolute", top: "16px"}}>
-					<Button type="primary" style={{ lineHeight: "22px", marginRight: "12px" }} onClick={()=>{setChangeLayout("horizontal")} }>Horizontal</Button>
-					<Button type="primary" style={{ lineHeight: "22px", marginRight: "12px" }} onClick={()=>{setChangeLayout("vertical")}}>Vertical</Button>
-					<Button type="primary" style={{ lineHeight: "22px"}} onClick={()=>{setChangeLayout("inline")}}>Inline</Button>
+					<Button type="primary" style={{ lineHeight: "22px", marginRight: "12px" }} onClick={()=>{setChangeLayout("horizontal");setErrors({});} }>Horizontal</Button>
+					<Button type="primary" style={{ lineHeight: "22px", marginRight: "12px" }} onClick={()=>{setChangeLayout("vertical");setErrors({});}}>Vertical</Button>
+					<Button type="primary" style={{ lineHeight: "22px"}} onClick={()=>{setChangeLayout("inline");setErrors({});}}>Inline</Button>
 				</div>
 				<Form
 				  layout = {changeLayout as ("horizontal" | "vertical" | "inline")}

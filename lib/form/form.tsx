@@ -40,6 +40,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
 								id={field.name}
 								type={field.input.type}
 								value={formData[field.name]}
+								error = {Boolean(Object.keys(props.errors).length)}
 								onChange={(e) => onInputChange(field.name, e.target.value)}
 							/>
 							<div className="errors">
@@ -72,6 +73,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
 							className="vertical-input-width"
 							type={field.input.type}
 							value={formData[field.name]}
+							error = {Boolean(Object.keys(props.errors).length)}
 							onChange={(e) => onInputChange(field.name, e.target.value)}
 						/>
 						<div className="errors">
@@ -99,6 +101,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
 							id={field.name}
 							type={field.input.type}
 							value={formData[field.name]}
+							error = {Boolean(Object.keys(props.errors).length)}
 							onChange={(e) => onInputChange(field.name, e.target.value)}
 						/>
 						<div className="errors">
