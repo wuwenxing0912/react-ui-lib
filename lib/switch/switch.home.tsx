@@ -22,13 +22,13 @@ const switchHome: React.FunctionComponent = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{/* <tr>
-							<td className="api-button-type">id</td>
-							<td className="api-type-description">输入框的id</td>
-							<td className="api-type">string</td>
+						<tr>
+							<td className="api-style">style</td>
+							<td className="api-style-description">自定义样式</td>
+							<td className="api-type">React.CSSProperties</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
-						</tr> */}
+						</tr>
 					</tbody>
 				</table>
 			</section>
@@ -83,7 +83,6 @@ const createSection = (
 		</section>
 	);
 };
-
 
 const createHighlightCode = (code: string) => {
 	return (

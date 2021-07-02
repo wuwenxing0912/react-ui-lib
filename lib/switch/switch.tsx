@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import classes from "../helpers/classes";
 import "./switch.scss";
 
-const Switch: React.FunctionComponent = () => {
+interface Props {
+	style?: React.CSSProperties;
+}
+
+const Switch: React.FunctionComponent<Props> = (props) => {
+	const { ...rest } = props;
 	const [checked, setChecked] = useState("switch-unchecked");
 	const [innerClass, setInnerClass] = useState("switch-inner-unchecked");
 	const changeChecked = (state: string) => {
@@ -21,6 +26,7 @@ const Switch: React.FunctionComponent = () => {
 		<span
 			className={classes("x-switch", checked)}
 			onClick={() => changeChecked(checked)}
+			{...rest}
 		>
 			<span className={classes("switch-inner", innerClass)}></span>
 		</span>
