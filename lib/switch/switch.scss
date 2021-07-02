@@ -1,0 +1,34 @@
+@import '../theme_color.scss';
+.x-switch {
+  height: 22px;
+  width: 40px;
+  min-width: 40px;
+  border-radius: 11px;
+  padding: 2px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+  
+  &.switch-checked {
+    background: $main-color;
+  }
+  &.switch-unchecked {
+    background: rgba(0, 0, 0, 0.25);
+  }
+  & .switch-inner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    &.switch-inner-checked {
+      transform: translateX(100%);
+      transition: all .2s ease-in-out;
+    }
+    &.switch-inner-unchecked {
+      transform: translateX(0);
+      transition: all .2s ease-in-out;
+    }
+  }
+}
