@@ -5,6 +5,8 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 
 const defaultSwitch = `<Switch></Switch>`;
 const defaultCheckedSwitch = `<Switch defaultChecked={true}></Switch>`;
+const disabledCheckedSwitch = `<Switch disabled={true}></Switch>
+<Switch defaultChecked={true} disabled={true}></Switch>`;
 
 const switchHome: React.FunctionComponent = () => {
 	return (
@@ -12,7 +14,11 @@ const switchHome: React.FunctionComponent = () => {
 			{createSection("组件和代码示例", defaultSwitch, "开关的基本用法")}
 			{createSection("", defaultCheckedSwitch, "开关默认选中", {
 				defaultChecked: true,
-				className: "hi"
+				className: "hi",
+			})}
+			{createSectionOfDouble("", disabledCheckedSwitch, "禁用状态", {
+				defaultChecked: true,
+				disabled: true,
 			})}
 			<section>
 				<h1>API</h1>
@@ -63,12 +69,62 @@ const createSection = (
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
-	const {defaultChecked, ...rest} = options || {};
+	const { defaultChecked, ...rest } = options || {};
 	return (
 		<section>
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
 				<Switch defaultChecked={defaultChecked} {...rest}></Switch>
+			</div>
+			<div className="description">
+				<span className="text">{description}</span>
+				<span
+					className="code-icon"
+					style={{ display: "inline-flex", cursor: "pointer" }}
+					onClick={() => {
+						setVisble(!visible);
+					}}
+					onMouseEnter={() => {
+						setshowCode(!showCode);
+					}}
+					onMouseLeave={() => {
+						setshowCode(!showCode);
+					}}
+				>
+					<Icon name="code" style={{ height: 19 }}></Icon>
+				</span>
+				<span
+					className="pop-content"
+					style={{ display: showCode ? "inline-block" : "none" }}
+				>
+					{visible ? "收起代码" : "显示代码"}
+				</span>
+			</div>
+			<div
+				className="code-area"
+				style={{ display: visible ? "block" : "none" }}
+			>
+				{createHighlightCode(code as string)}
+			</div>
+		</section>
+	);
+};
+
+const createSectionOfDouble = (
+	h1?: string,
+	code?: string,
+	description?: string,
+	options?: { [k: string]: any }
+) => {
+	const [visible, setVisble] = useState(false);
+	const [showCode, setshowCode] = useState(false);
+	const { defaultChecked, disabled, ...rest } = options || {};
+	return (
+		<section>
+			{h1 ? <h1>{h1}</h1> : ""}
+			<div className="example-container">
+				<Switch disabled={disabled} style={{marginRight: "20px"}} {...rest}></Switch>
+				<Switch defaultChecked={defaultChecked} disabled={disabled} {...rest}></Switch>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>

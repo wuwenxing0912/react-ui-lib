@@ -6,15 +6,18 @@ interface Props {
 	style?: React.CSSProperties;
 	defaultChecked?: boolean;
 	className?: string;
+	disabled?: boolean
 }
 
 const Switch: React.FunctionComponent<Props> = (props) => {
-	const { defaultChecked, className, ...rest } = props;
+	const { defaultChecked, className, disabled, ...rest } = props;
 	const checkedClassName = defaultChecked ? "switch-checked" : "switch-unchecked";
 	const checkedInnerClassName = defaultChecked ? "switch-inner-checked" : "switch-inner-unchecked";
+	const disabledClassName = disabled ? "disabled" : undefined;
 	const [checked, setChecked] = useState(checkedClassName);
 	const [innerClass, setInnerClass] = useState(checkedInnerClassName);
 	const changeChecked = (state: string) => {
+		if (disabled) return ;
 		let inner: string;
 		if (state === "switch-checked") {
 			state = "switch-unchecked";
@@ -28,7 +31,7 @@ const Switch: React.FunctionComponent<Props> = (props) => {
 	};
 	return (
 		<span
-			className={classes("x-switch", className, checked)}
+			className={classes("x-switch", checked, className, disabledClassName)}
 			onClick={() => changeChecked(checked)}
 			{...rest}
 		>
