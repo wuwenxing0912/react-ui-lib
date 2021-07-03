@@ -4,11 +4,15 @@ import Icon from "../icon/icon";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
 const defaultSwitch = `<Switch></Switch>`;
+const defaultCheckedSwitch = `<Switch defaultChecked={true}></Switch>`;
 
 const switchHome: React.FunctionComponent = () => {
 	return (
 		<Fragment>
 			{createSection("组件和代码示例", defaultSwitch, "开关的基本用法")}
+			{createSection("", defaultCheckedSwitch, "开关默认选中", {
+				defaultChecked: true,
+			})}
 			<section>
 				<h1>API</h1>
 				<table className="api-table" cellSpacing="0" cellPadding="0">
@@ -29,6 +33,13 @@ const switchHome: React.FunctionComponent = () => {
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
 						</tr>
+						<tr>
+							<td className="api-style">defaultChecked</td>
+							<td className="api-style-description">开关默认选中状态</td>
+							<td className="api-type">boolean</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
 					</tbody>
 				</table>
 			</section>
@@ -44,11 +55,12 @@ const createSection = (
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
+	const defaultChecked = options && options.defaultChecked;
 	return (
 		<section>
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
-				<Switch></Switch>
+				<Switch defaultChecked={defaultChecked}></Switch>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>
