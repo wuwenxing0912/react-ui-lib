@@ -12,6 +12,7 @@ const switchHome: React.FunctionComponent = () => {
 			{createSection("组件和代码示例", defaultSwitch, "开关的基本用法")}
 			{createSection("", defaultCheckedSwitch, "开关默认选中", {
 				defaultChecked: true,
+				className: "hi"
 			})}
 			<section>
 				<h1>API</h1>
@@ -40,6 +41,13 @@ const switchHome: React.FunctionComponent = () => {
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
 						</tr>
+						<tr>
+							<td className="api-classname">className</td>
+							<td className="api-classname-description">自定义 Switch 类名</td>
+							<td className="api-type">string</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
 					</tbody>
 				</table>
 			</section>
@@ -55,12 +63,12 @@ const createSection = (
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
-	const defaultChecked = options && options.defaultChecked;
+	const {defaultChecked, ...rest} = options || {};
 	return (
 		<section>
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
-				<Switch defaultChecked={defaultChecked}></Switch>
+				<Switch defaultChecked={defaultChecked} {...rest}></Switch>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>

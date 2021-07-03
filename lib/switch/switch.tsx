@@ -5,10 +5,11 @@ import "./switch.scss";
 interface Props {
 	style?: React.CSSProperties;
 	defaultChecked?: boolean;
+	className?: string;
 }
 
 const Switch: React.FunctionComponent<Props> = (props) => {
-	const { defaultChecked, ...rest } = props;
+	const { defaultChecked, className, ...rest } = props;
 	const checkedClassName = defaultChecked ? "switch-checked" : "switch-unchecked";
 	const checkedInnerClassName = defaultChecked ? "switch-inner-checked" : "switch-inner-unchecked";
 	const [checked, setChecked] = useState(checkedClassName);
@@ -27,7 +28,7 @@ const Switch: React.FunctionComponent<Props> = (props) => {
 	};
 	return (
 		<span
-			className={classes("x-switch", checked)}
+			className={classes("x-switch", className, checked)}
 			onClick={() => changeChecked(checked)}
 			{...rest}
 		>
