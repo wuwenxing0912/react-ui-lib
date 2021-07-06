@@ -117,6 +117,11 @@ $main-color: #007aff;
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
+			& .x-scroll-inner {
+				& p {
+					padding: 5px 10px;
+				}
+			}
 		}
 		& .example-container-fix {
 			margin: 0 auto;
