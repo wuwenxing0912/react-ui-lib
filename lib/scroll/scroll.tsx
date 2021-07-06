@@ -11,10 +11,23 @@ import "./scroll.scss";
 
 interface Props {
 	style?: React.CSSProperties;
+	className?: string;
+	trackStyle?: React.CSSProperties;
+	trackClassName?: string;
+	barStyle?: React.CSSProperties;
+	barClassName?: string;
 }
 
 const Scroll: React.FunctionComponent<Props> = (props) => {
-	const { ...rest } = props;
+	const {
+		style,
+		className,
+		trackStyle,
+		trackClassName,
+		barStyle,
+		barClassName,
+		...rest
+	} = props;
 	const [barHeight, setBarHeight] = useState(0);
 	const [barTop, _setBarTop] = useState(0);
 	const setBarTop = (n: number) => {
@@ -80,7 +93,7 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
 		};
 	}, []);
 	return (
-		<div className={classes("x-scroll")} {...rest}>
+		<div className={classes("x-scroll", className)} style={style} {...rest}>
 			<div
 				className="x-scroll-inner"
 				style={{ right: -scrollbarWidth() }}
@@ -89,12 +102,16 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
 			>
 				{props.children}
 			</div>
-			<div className="x-scroll-track">
+			<div
+				className={classes("x-scroll-track", trackClassName)}
+				style={trackStyle}
+			>
 				<div
-					className="x-scroll-bar"
+					className={classes("x-scroll-bar", barClassName)}
 					style={{
 						height: `${barHeight}px`,
 						transform: `translateY(${barTop}px)`,
+						...barStyle,
 					}}
 					onMouseDown={onMouseDown}
 				></div>

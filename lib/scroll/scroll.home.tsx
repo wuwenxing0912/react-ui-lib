@@ -3,7 +3,11 @@ import Scroll from "./scroll";
 import Icon from "../icon/icon";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-const defaultScroll = `<Scroll></Scroll>`;
+const defaultScroll = `<Scroll>
+  <p>content 1</p>
+  ......
+  <p>content 60</p>
+</Scroll>`;
 
 const switchHome: React.FunctionComponent = () => {
 	return (
@@ -101,8 +105,51 @@ const switchHome: React.FunctionComponent = () => {
 					<tbody>
 						<tr>
 							<td className="api-style">style</td>
-							<td className="api-style-description">自定义样式</td>
+							<td className="api-style-description">
+								自定义 Scroll外层容器 样式
+							</td>
 							<td className="api-type">React.CSSProperties</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
+						<tr>
+							<td className="api-classname">className</td>
+							<td className="api-classname-description">自定义 Scroll 类名</td>
+							<td className="api-type">string</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
+						<tr>
+							<td className="api-style">trackStyle</td>
+							<td className="api-style-description">自定义滚动条轨道样式</td>
+							<td className="api-type">React.CSSProperties</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
+						<tr>
+							<td className="api-classname">trackClassName</td>
+							<td className="api-classname-description">
+								自定义滚动条轨道类名
+							</td>
+							<td className="api-type">string</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
+						<tr>
+							<td className="api-style">barStyle</td>
+							<td className="api-style-description">
+								自定义滚动条轨道滑块样式
+							</td>
+							<td className="api-type">React.CSSProperties</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
+						</tr>
+						<tr>
+							<td className="api-classname">barClassName</td>
+							<td className="api-classname-description">
+								自定义滚动条轨道滑块类名
+							</td>
+							<td className="api-type">string</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
 						</tr>
