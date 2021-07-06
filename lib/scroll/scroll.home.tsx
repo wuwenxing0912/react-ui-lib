@@ -9,7 +9,11 @@ const switchHome: React.FunctionComponent = () => {
 	return (
 		<Fragment>
 			<Scroll
-				style={{ width: "100%", height: "400px", border: "1px solid red" }}
+				style={{
+					width: "100%",
+					height: "400px",
+					border: "1px solid rgba(0, 0, 0, 0.1)",
+				}}
 			>
 				<p>content 1</p>
 				<p>content 2</p>
@@ -123,7 +127,12 @@ const createSection = (
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
 				<Scroll
-					style={{ width: "100%", height: "400px", border: "1px solid red" }}
+					style={{
+						width: "100%",
+						height: "400px",
+						borderRadius: "3px",
+						border: "1px solid rgba(0, 0, 0, 0.2)",
+					}}
 					{...rest}
 				>
 					<p>content 1</p>
