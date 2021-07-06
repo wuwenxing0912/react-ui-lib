@@ -30,6 +30,7 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
 	} = props;
 	const [barHeight, setBarHeight] = useState(0);
 	const [barTop, _setBarTop] = useState(0);
+	const [trackVisible, setTrackvisible] = useState(false);
 	const setBarTop = (n: number) => {
 		const scrollHeight = scrollInnerRef.current!.scrollHeight;
 		const viewHeight = scrollInnerRef.current!.getBoundingClientRect().height;
@@ -40,6 +41,9 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
 			return;
 		} else {
 			_setBarTop(n);
+		}
+		if (scrollHeight > viewHeight) {
+			setTrackvisible(true);
 		}
 	};
 	const onScroll: UIEventHandler = (e) => {
@@ -54,6 +58,9 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
 		const scrollHeight = scrollInnerRef.current!.scrollHeight;
 		const viewHeight = scrollInnerRef.current!.getBoundingClientRect().height;
 		setBarHeight((viewHeight * viewHeight) / scrollHeight);
+		if (scrollHeight > viewHeight) {
+			setTrackvisible(true);
+		}
 	}, []);
 	const draggingRef = useRef(false);
 	const preClientYRef = useRef(0);
@@ -104,7 +111,7 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
 			</div>
 			<div
 				className={classes("x-scroll-track", trackClassName)}
-				style={trackStyle}
+				style={{ opacity: trackVisible ? 1 : 0, ...trackStyle }}
 			>
 				<div
 					className={classes("x-scroll-bar", barClassName)}
