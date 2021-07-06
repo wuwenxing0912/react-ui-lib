@@ -1,27 +1,27 @@
 .x-scroll {
-  overflow: hidden;
-  position: relative;
-  .x-scroll-inner {
-    border: 1px solid blue;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-  }
-  .x-scroll-track {
-    position: absolute;
-    height: 100%;
-    width: 10px;
-    top: 0;
-    right: 0;
-    border: 1px solid green;
-    .x-scroll-bar {
-      position: absolute;
-      left: 0;
-      background: black;
-      width: 100%;
-    }
-  }
+	overflow: hidden;
+	position: relative;
+	.x-scroll-inner {
+		border: 1px solid blue;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		overflow: auto;
+	}
+	.x-scroll-track {
+		position: absolute;
+		height: 100%;
+		width: 8px;
+		top: 0;
+		right: 0;
+		.x-scroll-bar {
+			position: absolute;
+			left: 1;
+			background-color: rgba(0, 0, 0, 0.2);
+			width: 6px;
+			border-radius: 3px;
+		}
+	}
 }
