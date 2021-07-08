@@ -8,6 +8,7 @@ import Input from "./lib/input/input.home";
 import Form from "./lib/form/form.home";
 import Switch from "./lib/switch/switch.home";
 import Scroll from "./lib/scroll/scroll.home";
+import Rate from "./lib/rate/rate.home";
 import "./home.scss";
 
 ReactDOM.render(
@@ -44,6 +45,9 @@ ReactDOM.render(
 							<NavLink to="/scroll">Scroll 滚动条</NavLink>
 						</li>
 						<li>
+							<NavLink to="/rate">Rate 评分</NavLink>
+						</li>
+						<li>
 							<NavLink to="/form">Form 表单</NavLink>
 						</li>
 					</ul>
@@ -53,6 +57,7 @@ ReactDOM.render(
 					<Route path="/input" component={Input}></Route>
 					<Route path="/switch" component={Switch}></Route>
 					<Route path="/scroll" component={Scroll}></Route>
+					<Route path="/rate" component={Rate}></Route>
 					<Route path="/form" component={Form}></Route>
 					<Route exact path="/"><Redirect to="/button" /></Route>
 				</Content>
