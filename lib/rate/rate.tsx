@@ -9,6 +9,7 @@ interface Props {
 	style?: React.CSSProperties;
 	defaultValue?: number;
 	value?: number;
+	disabled?: boolean;
 }
 
 const Rate: React.FunctionComponent<Props> = (props) => {
@@ -17,25 +18,38 @@ const Rate: React.FunctionComponent<Props> = (props) => {
 	const value = props.value || defaultValue;
 	const [defaultStarCount, setDefaultStarCount] = useState(defaultValue);
 	const [starCount, setStarCount] = useState(value);
+	const disabled = props.disabled ? "disabled" : undefined;
 	const hoverEnter: MouseEventHandler = (e) => {
-		e.currentTarget.parentNode?.childNodes.forEach((child, index) => {
-			if (e.currentTarget === child) {
-				setDefaultStarCount(index + 1);
-				return;
-			}
-		});
+		if (disabled) {
+			return;
+		} else {
+			e.currentTarget.parentNode?.childNodes.forEach((child, index) => {
+				if (e.currentTarget === child) {
+					setDefaultStarCount(index + 1);
+					return;
+				}
+			});
+		}
 	};
 	const hoverLeave: MouseEventHandler = (e) => {
-		setDefaultStarCount(starCount);
+		if (disabled) {
+			return;
+		} else {
+			setDefaultStarCount(starCount);
+		}
 	};
 	const onClick: MouseEventHandler = (e) => {
-		e.currentTarget.parentNode?.childNodes.forEach((child, index) => {
-			if (e.currentTarget === child) {
-				setStarCount(index + 1);
-				setDefaultStarCount(index + 1);
-				return;
-			}
-		});
+		if (disabled) {
+			return;
+		} else {
+			e.currentTarget.parentNode?.childNodes.forEach((child, index) => {
+				if (e.currentTarget === child) {
+					setStarCount(index + 1);
+					setDefaultStarCount(index + 1);
+					return;
+				}
+			});
+		}
 	};
 
 	return (
@@ -46,7 +60,7 @@ const Rate: React.FunctionComponent<Props> = (props) => {
 		>
 			{[...Array(defaultStarCount)].map((val, index) => (
 				<li
-					className="x-rate-star"
+					className={classes("x-rate-star", disabled)}
 					onMouseEnter={hoverEnter}
 					onClick={onClick}
 					key={index}
@@ -55,8 +69,12 @@ const Rate: React.FunctionComponent<Props> = (props) => {
 				</li>
 			))}
 			{[...Array(count! - defaultStarCount)].map((val, index) => (
-				<li className="x-rate-star" onMouseEnter={hoverEnter} key={index}>
-					<Icon name="star" className="x-star-icon"></Icon>
+				<li
+					className={classes("x-rate-star", disabled)}
+					onMouseEnter={hoverEnter}
+					key={index}
+				>
+					<Icon name="star" className={classes("x-star-icon", disabled)}></Icon>
 				</li>
 			))}
 		</ul>
@@ -65,6 +83,7 @@ const Rate: React.FunctionComponent<Props> = (props) => {
 
 Rate.defaultProps = {
 	count: 5,
+	disabled: false,
 };
 
 export default Rate;

@@ -8,8 +8,12 @@
 		justify-content: center;
 		align-items: center;
 		margin-right: 6px;
+		cursor: pointer;
 		&:last-child {
 			margin-right: 0;
+		}
+		&.disabled {
+			cursor: initial;
 		}
 	}
 	.x-star-icon {
@@ -24,6 +28,10 @@
 		&:hover {
 			transform: scale(1.2);
 			fill: $main-color;
+		}
+		&.disabled:hover {
+			transform: scale(1);
+			fill: #e8e8e8;
 		}
 	}
 }

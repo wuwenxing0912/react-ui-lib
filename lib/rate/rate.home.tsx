@@ -9,12 +9,16 @@ const countRate = `<Rate count={8} defaultValue={1}></Rate>`;
 const RateHome: React.FunctionComponent = () => {
 	return (
 		<Fragment>
-			{createSection("组件和代码示例", false, defaultRate, "基本用法。", {
+			{createSection("组件和代码示例", defaultRate, "基本用法。", {
 				defaultValue: 1,
 			})}
-			{createSection("", false, countRate, "自定义 star 个数。", {
+			{createSection("", countRate, "自定义 star 个数。", {
 				defaultValue: 3,
 				count: 8,
+			})}
+			{createSection("", countRate, "禁用状态，无法交互。", {
+				defaultValue: 3,
+				disabled: true,
 			})}
 			<section>
 				<h1>API</h1>
@@ -68,7 +72,7 @@ const RateHome: React.FunctionComponent = () => {
 						</tr>
 						<tr>
 							<td className="api-style">disabled</td>
-							<td className="api-style-description">按钮禁用状态</td>
+							<td className="api-style-description">Rate 禁用状态</td>
 							<td className="api-type">boolean</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">false</td>
@@ -82,14 +86,13 @@ const RateHome: React.FunctionComponent = () => {
 
 const createSection = (
 	h1?: string,
-	disabled?: boolean,
 	code?: string,
 	description?: string,
 	options?: { [key: string]: any }
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
-	const { defaultValue, count, ...rest } = options || {};
+	const { defaultValue, count, disabled, ...rest } = options || {};
 	return (
 		<Fragment>
 			<section>
@@ -99,6 +102,7 @@ const createSection = (
 						className="default"
 						count={count}
 						defaultValue={defaultValue}
+						disabled={disabled}
 						{...rest}
 					></Rate>
 				</div>
