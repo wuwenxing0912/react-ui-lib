@@ -5,6 +5,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 
 const defaultRate = `<Rate defaultValue={1}></Rate>`;
 const countRate = `<Rate count={8} defaultValue={1}></Rate>`;
+const disabledRate = `<Rate disabled={true} defaultValue={3}></Rate>`;
 
 const RateHome: React.FunctionComponent = () => {
 	return (
@@ -16,7 +17,7 @@ const RateHome: React.FunctionComponent = () => {
 				defaultValue: 3,
 				count: 8,
 			})}
-			{createSection("", countRate, "禁用状态，无法交互。", {
+			{createSection("", disabledRate, "禁用状态，无法交互。", {
 				defaultValue: 3,
 				disabled: true,
 			})}
