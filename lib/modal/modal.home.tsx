@@ -4,12 +4,18 @@ import Icon from "../icon/icon";
 import Button from "../button/button";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-const defaultToast = `import Modal from "./modal";`;
+const defaultModal = `import Modal from "./modal";
+const [modalVisible, setModalVisible] = useState(false);
+<Modal
+  visible={modalVisible}
+  onClose={() => setModalVisible(!modalVisible)}
+  onConfirm={() => setModalVisible(!modalVisible)}
+></Modal>`;
 
 const ModalHome: React.FunctionComponent = () => {
 	return (
 		<Fragment>
-			{createSection("组件和代码示例", defaultToast, "对话框的基本用法。")}
+			{createSection("组件和代码示例", defaultModal, "对话框的基本用法。")}
 			<section>
 				<h1>API</h1>
 				<table className="api-table" cellSpacing="0" cellPadding="0">
@@ -23,6 +29,13 @@ const ModalHome: React.FunctionComponent = () => {
 						</tr>
 					</thead>
 					<tbody>
+						<tr>
+							<td className="api-style">visible</td>
+							<td className="api-style-description">Modal 是否可见</td>
+							<td className="api-type">boolean</td>
+							<td className="api-nesscery">否</td>
+							<td className="api-default">---</td>
+						</tr>
 						<tr>
 							<td className="api-classname">className</td>
 							<td className="api-classname-description">自定义 Modal 类名</td>
@@ -61,12 +74,13 @@ const createSection = (
 			<section>
 				{h1 ? <h1>{h1}</h1> : ""}
 				<div className="example-container">
-					<Button onClick={() => setModalVisible(!modalVisible)}>click</Button>
+					<Button type="primary" onClick={() => setModalVisible(!modalVisible)}>
+						open Modal
+					</Button>
 					<Modal
 						visible={modalVisible}
 						onClose={() => setModalVisible(!modalVisible)}
 						onConfirm={() => setModalVisible(!modalVisible)}
-						onClickMaskClose={true}
 					>
 						<div>弹出框</div>
 					</Modal>
