@@ -37,6 +37,13 @@ const ModalHome: React.FunctionComponent = () => {
 							<td className="api-default">---</td>
 						</tr>
 						<tr>
+							<td className="api-style">onClose</td>
+							<td className="api-style-description">关闭 Modal 回调函数</td>
+							<td className="api-type">React.MouseEventHandler</td>
+							<td className="api-nesscery">否</td>
+							<td className="api-default">---</td>
+						</tr>
+						<tr>
 							<td className="api-classname">className</td>
 							<td className="api-classname-description">自定义 Modal 类名</td>
 							<td className="api-type">string</td>
