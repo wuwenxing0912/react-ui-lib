@@ -65,6 +65,7 @@ const createSection = (
 					<Modal
 						visible={modalVisible}
 						onClose={() => setModalVisible(!modalVisible)}
+						onConfirm={() => setModalVisible(!modalVisible)}
 						onClickMaskClose={true}
 					>
 						<div>弹出框</div>
