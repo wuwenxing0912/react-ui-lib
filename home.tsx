@@ -10,6 +10,7 @@ import Switch from "./lib/switch/switch.home";
 import Scroll from "./lib/scroll/scroll.home";
 import Rate from "./lib/rate/rate.home";
 import Toast from "./lib/toast/toast.home";
+import LayoutHome from "./lib/layout/layout.home";
 import "./home.scss";
 
 ReactDOM.render(
@@ -49,6 +50,9 @@ ReactDOM.render(
 							<NavLink to="/toast">Toast 信息提示框</NavLink>
 						</li>
 						<li>
+							<NavLink to="/layout">Layout 布局</NavLink>
+						</li>
+						<li>
 							<NavLink to="/rate">Rate 评分</NavLink>
 						</li>
 						<li>
@@ -62,6 +66,7 @@ ReactDOM.render(
 					<Route path="/switch" component={Switch}></Route>
 					<Route path="/scroll" component={Scroll}></Route>
 					<Route path="/toast" component={Toast}></Route>
+					<Route path="/layout" component={LayoutHome}></Route>
 					<Route path="/rate" component={Rate}></Route>
 					<Route path="/form" component={Form}></Route>
 					<Route exact path="/"><Redirect to="/button" /></Route>
