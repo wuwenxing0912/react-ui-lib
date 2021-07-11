@@ -5,6 +5,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	min-width: 400px;
+	max-width: 500px;
 	line-height: 24px;
 	background: white;
 	border-radius: 4px;
@@ -43,9 +44,8 @@
 	&-main {
 		padding: 8px 16px;
 		min-height: 120px;
-		max-width: 500px;
 		font-size: 14px;
-    color: rgba(0, 0, 0, 0.65);
+		color: rgba(0, 0, 0, 0.65);
 	}
 
 	&-footer {
