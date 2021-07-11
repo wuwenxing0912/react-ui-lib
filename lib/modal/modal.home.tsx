@@ -51,6 +51,15 @@ const ModalHome: React.FunctionComponent = () => {
 							<td className="api-default">---</td>
 						</tr>
 						<tr>
+							<td className="api-style">onClickMaskClose</td>
+							<td className="api-style-description">
+								是否点击遮罩层关闭 Modal
+							</td>
+							<td className="api-type">boolean</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">false</td>
+						</tr>
+						<tr>
 							<td className="api-classname">className</td>
 							<td className="api-classname-description">自定义 Modal 类名</td>
 							<td className="api-type">string</td>
