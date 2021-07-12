@@ -61,10 +61,17 @@ const ModalHome: React.FunctionComponent = () => {
 						</tr>
 						<tr>
 							<td className="api-classname">title</td>
-							<td className="api-classname-description">自定义 Modal 标题</td>
+							<td className="api-classname-description">Modal 标题</td>
 							<td className="api-type">string | ReactNode</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">"对话框"</td>
+						</tr>
+						<tr>
+							<td className="api-classname">content</td>
+							<td className="api-classname-description">Modal 内容</td>
+							<td className="api-type">string | ReactNode</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">---</td>
 						</tr>
 						<tr>
 							<td className="api-classname">className</td>
@@ -111,9 +118,14 @@ const createSection = (
 						visible={modalVisible}
 						onClose={() => setModalVisible(!modalVisible)}
 						onConfirm={() => setModalVisible(!modalVisible)}
-					>
-						<div>弹出框</div>
-					</Modal>
+						content={
+							<div>
+								<div>more content...</div>
+								<div>more content...</div>
+								<div>more content...</div>
+							</div>
+						}
+					></Modal>
 				</div>
 				<div className="description">
 					<span className="text">{description}</span>

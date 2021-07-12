@@ -11,6 +11,7 @@ interface Props {
 	onConfirm: React.MouseEventHandler;
 	onClickMaskClose?: boolean;
 	title?: string | ReactNode;
+	content?: string | ReactNode;
 }
 
 const Modal: React.FunctionComponent<Props> = (props) => {
@@ -41,7 +42,7 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 							<Icon name="close" className={classes("x-modal-icon")}></Icon>
 						</div>
 					</header>
-					<main className={classes("x-modal-main")}>{props.children}</main>
+					<main className={classes("x-modal-main")}>{props.content}</main>
 					<footer className={classes("x-modal-footer")}>
 						<Button
 							className={classes("x-modal-footer-button")}
