@@ -12,6 +12,7 @@ interface Props {
 	onClickMaskClose?: boolean;
 	title?: string | ReactNode;
 	content?: string | ReactNode;
+	cancelText?: string;
 }
 
 const Modal: React.FunctionComponent<Props> = (props) => {
@@ -48,7 +49,7 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 							className={classes("x-modal-footer-button")}
 							onClick={props.onClose}
 						>
-							取消
+							{props.cancelText}
 						</Button>
 						<Button type="primary" onClick={props.onConfirm}>
 							确定
@@ -63,6 +64,7 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 Modal.defaultProps = {
 	onClickMaskClose: false,
 	title: "对话框",
+	cancelText: "取消"
 };
 
 export default Modal;
