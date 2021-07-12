@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, ReactNode } from "react";
 import classes from "../helpers/classes";
 import Icon from "../icon/icon";
 import Button from "../button/button";
@@ -10,6 +10,7 @@ interface Props {
 	onClose: React.MouseEventHandler;
 	onConfirm: React.MouseEventHandler;
 	onClickMaskClose?: boolean;
+	title?: string | ReactNode;
 }
 
 const Modal: React.FunctionComponent<Props> = (props) => {
@@ -21,29 +22,46 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 			props.onClose(e);
 		}
 	};
-	const portal = props.visible ? (
-		<Fragment>
-			<div className={classes("x-modal-mask")} onClick={onClickMaskClose}></div>
-			<div className={classes("x-modal")}>
-				<header className={classes("x-modal-header")}>
-					<div className={classes("x-modal-header-content")}>提示</div>
-					<div className={classes("x-modal-icon-wrapper")}  onClick={props.onClose}>
-						<Icon name="close" className={classes("x-modal-icon")}></Icon>
-					</div>
-				</header>
-				<main className={classes("x-modal-main")}>{props.children}</main>
-				<footer className={classes("x-modal-footer")}>
-					<Button className={classes("x-modal-footer-button")} onClick={props.onClose}>取消</Button>
-					<Button type="primary" onClick={props.onConfirm}>确定</Button>
-				</footer>
-			</div>
-		</Fragment>
-	) : null;
+	const portal =
+		props.visible || true ? (
+			<Fragment>
+				<div
+					className={classes("x-modal-mask")}
+					onClick={onClickMaskClose}
+				></div>
+				<div className={classes("x-modal")}>
+					<header className={classes("x-modal-header")}>
+						<div className={classes("x-modal-header-content")}>
+							{props.title}
+						</div>
+						<div
+							className={classes("x-modal-icon-wrapper")}
+							onClick={props.onClose}
+						>
+							<Icon name="close" className={classes("x-modal-icon")}></Icon>
+						</div>
+					</header>
+					<main className={classes("x-modal-main")}>{props.children}</main>
+					<footer className={classes("x-modal-footer")}>
+						<Button
+							className={classes("x-modal-footer-button")}
+							onClick={props.onClose}
+						>
+							取消
+						</Button>
+						<Button type="primary" onClick={props.onConfirm}>
+							确定
+						</Button>
+					</footer>
+				</div>
+			</Fragment>
+		) : null;
 	return ReactDOM.createPortal(portal, document.body);
 };
 
 Modal.defaultProps = {
 	onClickMaskClose: false,
+	title: "对话框",
 };
 
 export default Modal;

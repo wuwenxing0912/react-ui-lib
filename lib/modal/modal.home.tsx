@@ -60,6 +60,13 @@ const ModalHome: React.FunctionComponent = () => {
 							<td className="api-default">false</td>
 						</tr>
 						<tr>
+							<td className="api-classname">title</td>
+							<td className="api-classname-description">自定义 Modal 标题</td>
+							<td className="api-type">string | ReactNode</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">"对话框"</td>
+						</tr>
+						<tr>
 							<td className="api-classname">className</td>
 							<td className="api-classname-description">自定义 Modal 类名</td>
 							<td className="api-type">string</td>
