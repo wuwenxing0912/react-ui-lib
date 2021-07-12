@@ -88,6 +88,15 @@ const ModalHome: React.FunctionComponent = () => {
 							<td className="api-default">确定</td>
 						</tr>
 						<tr>
+							<td className="api-classname">cancelButtonType</td>
+							<td className="api-classname-description">Modal 取消按钮 类型</td>
+							<td className="api-type">
+								"default" | "primary" | "dashed" | "danger"
+							</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">default</td>
+						</tr>
+						<tr>
 							<td className="api-classname">className</td>
 							<td className="api-classname-description">自定义 Modal 类名</td>
 							<td className="api-type">string</td>
@@ -139,6 +148,7 @@ const createSection = (
 								<div>more content...</div>
 							</div>
 						}
+						cancelButtonType="danger"
 					></Modal>
 				</div>
 				<div className="description">

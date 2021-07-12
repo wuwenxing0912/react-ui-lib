@@ -14,6 +14,7 @@ interface Props {
 	content?: string | ReactNode;
 	cancelText?: string;
 	confirmText?: string;
+	cancelButtonType?: "default" | "primary" | "dashed" | "danger";
 }
 
 const Modal: React.FunctionComponent<Props> = (props) => {
@@ -47,6 +48,7 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 					<main className={classes("x-modal-main")}>{props.content}</main>
 					<footer className={classes("x-modal-footer")}>
 						<Button
+							type={props.cancelButtonType}
 							className={classes("x-modal-footer-button")}
 							onClick={props.onClose}
 						>
@@ -67,6 +69,7 @@ Modal.defaultProps = {
 	title: "对话框",
 	cancelText: "取消",
 	confirmText: "确定",
+	cancelButtonType: "default",
 };
 
 export default Modal;
