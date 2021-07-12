@@ -27,41 +27,35 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 			props.onClose(e);
 		}
 	};
-	const portal =
-		props.visible || true ? (
-			<Fragment>
-				<div
-					className={classes("x-modal-mask")}
-					onClick={onClickMaskClose}
-				></div>
-				<div className={classes("x-modal")}>
-					<header className={classes("x-modal-header")}>
-						<div className={classes("x-modal-header-content")}>
-							{props.title}
-						</div>
-						<div
-							className={classes("x-modal-icon-wrapper")}
-							onClick={props.onClose}
-						>
-							<Icon name="close" className={classes("x-modal-icon")}></Icon>
-						</div>
-					</header>
-					<main className={classes("x-modal-main")}>{props.content}</main>
-					<footer className={classes("x-modal-footer")}>
-						<Button
-							type={props.cancelButtonType}
-							className={classes("x-modal-footer-button")}
-							onClick={props.onClose}
-						>
-							{props.cancelText}
-						</Button>
-						<Button type={props.confirmButtonType} onClick={props.onConfirm}>
-							{props.confirmText}
-						</Button>
-					</footer>
-				</div>
-			</Fragment>
-		) : null;
+	const portal = props.visible ? (
+		<Fragment>
+			<div className={classes("x-modal-mask")} onClick={onClickMaskClose}></div>
+			<div className={classes("x-modal")}>
+				<header className={classes("x-modal-header")}>
+					<div className={classes("x-modal-header-content")}>{props.title}</div>
+					<div
+						className={classes("x-modal-icon-wrapper")}
+						onClick={props.onClose}
+					>
+						<Icon name="close" className={classes("x-modal-icon")}></Icon>
+					</div>
+				</header>
+				<main className={classes("x-modal-main")}>{props.content}</main>
+				<footer className={classes("x-modal-footer")}>
+					<Button
+						type={props.cancelButtonType}
+						className={classes("x-modal-footer-button")}
+						onClick={props.onClose}
+					>
+						{props.cancelText}
+					</Button>
+					<Button type={props.confirmButtonType} onClick={props.onConfirm}>
+						{props.confirmText}
+					</Button>
+				</footer>
+			</div>
+		</Fragment>
+	) : null;
 	return ReactDOM.createPortal(portal, document.body);
 };
 

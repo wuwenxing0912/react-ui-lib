@@ -10,6 +10,16 @@
 	background: white;
 	border-radius: 4px;
 	z-index: 2;
+	animation: 0.3s modal ease-in;
+
+	@keyframes modal {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 
 	&-mask {
 		position: fixed;
@@ -19,6 +29,7 @@
 		height: 100%;
 		background: rgba(#8a8a8a, 0.35);
 		z-index: 1;
+		animation: 0.1s modal linear;
 	}
 
 	&-header {
