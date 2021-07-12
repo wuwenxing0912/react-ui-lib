@@ -15,6 +15,7 @@ interface Props {
 	cancelText?: string;
 	confirmText?: string;
 	cancelButtonType?: "default" | "primary" | "dashed" | "danger";
+	confirmButtonType?: "default" | "primary" | "dashed" | "danger";
 }
 
 const Modal: React.FunctionComponent<Props> = (props) => {
@@ -54,7 +55,7 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 						>
 							{props.cancelText}
 						</Button>
-						<Button type="primary" onClick={props.onConfirm}>
+						<Button type={props.confirmButtonType} onClick={props.onConfirm}>
 							{props.confirmText}
 						</Button>
 					</footer>
@@ -70,6 +71,7 @@ Modal.defaultProps = {
 	cancelText: "取消",
 	confirmText: "确定",
 	cancelButtonType: "default",
+	confirmButtonType: "primary",
 };
 
 export default Modal;
