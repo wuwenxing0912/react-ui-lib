@@ -13,6 +13,7 @@ interface Props {
 	title?: string | ReactNode;
 	content?: string | ReactNode;
 	cancelText?: string;
+	confirmText?: string;
 }
 
 const Modal: React.FunctionComponent<Props> = (props) => {
@@ -52,7 +53,7 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 							{props.cancelText}
 						</Button>
 						<Button type="primary" onClick={props.onConfirm}>
-							确定
+							{props.confirmText}
 						</Button>
 					</footer>
 				</div>
@@ -64,7 +65,8 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 Modal.defaultProps = {
 	onClickMaskClose: false,
 	title: "对话框",
-	cancelText: "取消"
+	cancelText: "取消",
+	confirmText: "确定",
 };
 
 export default Modal;
