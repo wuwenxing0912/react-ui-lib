@@ -1,0 +1,40 @@
+@import "../_theme_color.scss";
+.x-slide {
+	position: relative;
+	overflow: hidden;
+	&-inner {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		&-child {
+			flex-shrink: 0;
+		}
+	}
+	.x-slide-dots-container {
+		position: absolute;
+		bottom: 15px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		.x-slide-dots {
+			display: block;
+			background-color: #fff;
+			opacity: 0.3;
+			width: 16px;
+			height: 3px;
+			border-radius: 1px;
+			margin: 0 2px;
+			transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+			cursor: pointer;
+			&:hover {
+				opacity: 0.6;
+			}
+			&.active {
+				width: 24px;
+				opacity: 0.9;
+			}
+		}
+	}
+}
