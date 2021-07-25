@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter as Router, Route, NavLink, Redirect } from "react-router-dom";
+import {
+	HashRouter as Router,
+	Route,
+	NavLink,
+	Redirect,
+} from "react-router-dom";
 import Icon from "./lib/icon/icon";
 import Button from "./lib/button/button.home";
 import { Aside, Content, Footer, Header, Layout } from "./lib/layout/layout";
@@ -12,7 +17,6 @@ import Rate from "./lib/rate/rate.home";
 import Toast from "./lib/toast/toast.home";
 import LayoutHome from "./lib/layout/layout.home";
 import Modal from "./lib/modal/modal.home";
-import Slide from "./lib/slide/slide.home"
 import "./home.scss";
 
 ReactDOM.render(
@@ -61,9 +65,6 @@ ReactDOM.render(
 							<NavLink to="/rate">Rate 评分</NavLink>
 						</li>
 						<li>
-							<NavLink to="/slide">Slide 轮播</NavLink>
-						</li>
-						<li>
 							<NavLink to="/form">Form 表单</NavLink>
 						</li>
 					</ul>
@@ -77,9 +78,10 @@ ReactDOM.render(
 					<Route path="/layout" component={LayoutHome}></Route>
 					<Route path="/modal" component={Modal}></Route>
 					<Route path="/rate" component={Rate}></Route>
-					<Route path="/slide" component={Slide}></Route>
 					<Route path="/form" component={Form}></Route>
-					<Route exact path="/"><Redirect to="/button" /></Route>
+					<Route exact path="/">
+						<Redirect to="/button" />
+					</Route>
 				</Content>
 			</Layout>
 			<Footer className="home-footer">
