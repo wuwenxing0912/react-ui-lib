@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { information, success, warning, error } from "./toast";
 import Icon from "../icon/icon";
 import Button from "../button/button";
-import Highlight, { defaultProps } from "prism-react-renderer";
+import createHighlightCode from "../helpers/code-highlight";
 
 const defaultToast = `import { information, success, warning, error } from "./toast";
 const options = { content: "There is some information here!" }
@@ -105,7 +105,7 @@ const createSection = (
 						onClick={() =>
 							success({
 								content: "There is some success here!",
-                delay: delay,
+								delay: delay,
 							})
 						}
 					>
@@ -116,7 +116,7 @@ const createSection = (
 						onClick={() =>
 							warning({
 								content: "There is some warning here!",
-                delay: delay,
+								delay: delay,
 							})
 						}
 					>
@@ -126,7 +126,7 @@ const createSection = (
 						onClick={() =>
 							error({
 								content: "There is some error here!",
-                delay: delay,
+								delay: delay,
 							})
 						}
 					>
@@ -165,24 +165,6 @@ const createSection = (
 				</div>
 			</section>
 		</Fragment>
-	);
-};
-
-const createHighlightCode = (code: string) => {
-	return (
-		<Highlight {...defaultProps} code={code} language="jsx">
-			{({ className, style, tokens, getLineProps, getTokenProps }) => (
-				<pre className={className} style={style}>
-					{tokens.map((line, i) => (
-						<div {...getLineProps({ line, key: i })}>
-							{line.map((token, key) => (
-								<span {...getTokenProps({ token, key })} />
-							))}
-						</div>
-					))}
-				</pre>
-			)}
-		</Highlight>
 	);
 };
 

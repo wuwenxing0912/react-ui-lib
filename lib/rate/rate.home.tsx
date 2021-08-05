@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Rate from "./rate";
 import Icon from "../icon/icon";
-import Highlight, { defaultProps } from "prism-react-renderer";
+import createHighlightCode from "../helpers/code-highlight";
 
 const defaultRate = `<Rate defaultValue={1}></Rate>`;
 const countRate = `<Rate count={8} defaultValue={1}></Rate>`;
@@ -139,24 +139,6 @@ const createSection = (
 				</div>
 			</section>
 		</Fragment>
-	);
-};
-
-const createHighlightCode = (code: string) => {
-	return (
-		<Highlight {...defaultProps} code={code} language="jsx">
-			{({ className, style, tokens, getLineProps, getTokenProps }) => (
-				<pre className={className} style={style}>
-					{tokens.map((line, i) => (
-						<div {...getLineProps({ line, key: i })}>
-							{line.map((token, key) => (
-								<span {...getTokenProps({ token, key })} />
-							))}
-						</div>
-					))}
-				</pre>
-			)}
-		</Highlight>
 	);
 };
 

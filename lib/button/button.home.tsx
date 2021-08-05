@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Button from "./button";
 import Icon from "../icon/icon";
-import Highlight, { defaultProps } from "prism-react-renderer";
+import createHighlightCode from "../helpers/code-highlight";
 
 const buttonType = `<Button type="default">Default</Button>
 <Button type="primary">Primary</Button>
@@ -33,8 +33,8 @@ const ButtonHome: React.FunctionComponent = () => {
 	const section1 = "按钮有四种类型：默认按钮、主题按钮、虚线按钮以及危险按钮。";
 	const section2 = "按钮禁用：设置按钮 disabled 禁用状态。";
 	const section3 = "图标按钮：设置 icon 属性。";
-	const section4 = "幽灵按钮：常用在有色背景上，按钮背景变为透明。"
-	const section5 = "按钮尺寸：按钮有大、中、小三种尺寸。"
+	const section4 = "幽灵按钮：常用在有色背景上，按钮背景变为透明。";
+	const section5 = "按钮尺寸：按钮有大、中、小三种尺寸。";
 	return (
 		<Fragment>
 			{createSection("组件和代码示例", false, buttonType, section1)}
@@ -120,7 +120,9 @@ const ButtonHome: React.FunctionComponent = () => {
 						</tr>
 						<tr>
 							<td className="api-style">buttonType</td>
-							<td className="api-style-description">设置原生button的type属性</td>
+							<td className="api-style-description">
+								设置原生button的type属性
+							</td>
 							<td className="api-type">"button" | "submit" | "reset"</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">button</td>
@@ -146,13 +148,16 @@ const createSection = (
 		console.log(e.type);
 	};
 	const containerGhostStyle = ghost && {
-		background: "rgb(190, 200, 200)"
+		background: "rgb(190, 200, 200)",
 	};
 	return (
 		<Fragment>
 			<section>
 				{h1 ? <h1>{h1}</h1> : ""}
-				<div className="example-container" style={containerGhostStyle as object}>
+				<div
+					className="example-container"
+					style={containerGhostStyle as object}
+				>
 					<Button
 						className="default"
 						style={{ marginRight: 20 }}
@@ -231,7 +236,7 @@ const createSection = (
 const createSectionButtonSize = (
 	h1?: string,
 	code?: string,
-	description?: string,
+	description?: string
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
@@ -243,30 +248,32 @@ const createSectionButtonSize = (
 				<div className="example-container">
 					<Button
 						style={{ marginRight: 20 }}
-						size = {size as "large"}
-						onClick={() => {setSize("large")}}
+						size={size as "large"}
+						onClick={() => {
+							setSize("large");
+						}}
 					>
 						Large
 					</Button>
 					<Button
 						type="primary"
 						style={{ marginRight: 20 }}
-						size = {size as "middle"}
+						size={size as "middle"}
 						onClick={() => setSize("middle")}
 					>
 						Middle
 					</Button>
 					<Button
 						type="dashed"
-						style={{ marginRight: 20 }}						
-						size = {size as "middle"}
+						style={{ marginRight: 20 }}
+						size={size as "middle"}
 						onClick={() => setSize("middle")}
 					>
 						Middle
 					</Button>
 					<Button
 						type="danger"
-						size = {size as "small"}
+						size={size as "small"}
 						onClick={() => setSize("small")}
 					>
 						Small
@@ -304,24 +311,6 @@ const createSectionButtonSize = (
 				</div>
 			</section>
 		</Fragment>
-	);
-};
-
-const createHighlightCode = (code: string) => {
-	return (
-		<Highlight {...defaultProps} code={code} language="jsx">
-			{({ className, style, tokens, getLineProps, getTokenProps }) => (
-				<pre className={className} style={style}>
-					{tokens.map((line, i) => (
-						<div {...getLineProps({ line, key: i })}>
-							{line.map((token, key) => (
-								<span {...getTokenProps({ token, key })} />
-							))}
-						</div>
-					))}
-				</pre>
-			)}
-		</Highlight>
 	);
 };
 

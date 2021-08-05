@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Switch from "./switch";
 import Icon from "../icon/icon";
-import Highlight, { defaultProps } from "prism-react-renderer";
+import createHighlightCode from "../helpers/code-highlight";
 
 const defaultSwitch = `<Switch></Switch>`;
 const defaultCheckedSwitch = `<Switch defaultChecked={true}></Switch>`;
@@ -123,8 +123,16 @@ const createSectionOfDouble = (
 		<section>
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
-				<Switch disabled={disabled} style={{marginRight: "20px"}} {...rest}></Switch>
-				<Switch defaultChecked={defaultChecked} disabled={disabled} {...rest}></Switch>
+				<Switch
+					disabled={disabled}
+					style={{ marginRight: "20px" }}
+					{...rest}
+				></Switch>
+				<Switch
+					defaultChecked={defaultChecked}
+					disabled={disabled}
+					{...rest}
+				></Switch>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>
@@ -157,24 +165,6 @@ const createSectionOfDouble = (
 				{createHighlightCode(code as string)}
 			</div>
 		</section>
-	);
-};
-
-const createHighlightCode = (code: string) => {
-	return (
-		<Highlight {...defaultProps} code={code} language="jsx">
-			{({ className, style, tokens, getLineProps, getTokenProps }) => (
-				<pre className={className} style={style}>
-					{tokens.map((line, i) => (
-						<div {...getLineProps({ line, key: i })}>
-							{line.map((token, key) => (
-								<span {...getTokenProps({ token, key })} />
-							))}
-						</div>
-					))}
-				</pre>
-			)}
-		</Highlight>
 	);
 };
 

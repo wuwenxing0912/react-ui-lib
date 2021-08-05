@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Scroll from "./scroll";
 import Icon from "../icon/icon";
-import Highlight, { defaultProps } from "prism-react-renderer";
+import createHighlightCode from "../helpers/code-highlight";
 
 const defaultScroll = `<Scroll>
   <p>content 1</p>
@@ -192,24 +192,6 @@ const createSection = (h1?: string, code?: string, description?: string) => {
 				{createHighlightCode(code as string)}
 			</div>
 		</section>
-	);
-};
-
-const createHighlightCode = (code: string) => {
-	return (
-		<Highlight {...defaultProps} code={code} language="jsx">
-			{({ className, style, tokens, getLineProps, getTokenProps }) => (
-				<pre className={className} style={style}>
-					{tokens.map((line, i) => (
-						<div {...getLineProps({ line, key: i })}>
-							{line.map((token, key) => (
-								<span {...getTokenProps({ token, key })} />
-							))}
-						</div>
-					))}
-				</pre>
-			)}
-		</Highlight>
 	);
 };
 
