@@ -45,9 +45,27 @@ const switchHome: React.FunctionComponent = () => {
 							<td className="api-default">---</td>
 						</tr>
 						<tr>
-							<td className="api-style">defaultChecked</td>
-							<td className="api-style-description">开关默认选中状态</td>
+							<td className="api-style">checked</td>
+							<td className="api-style-description">开关选中状态</td>
 							<td className="api-type">boolean</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">false</td>
+						</tr>
+						<tr>
+							<td className="api-style">disabled</td>
+							<td className="api-style-description">开关禁用状态</td>
+							<td className="api-type">boolean</td>
+							<td className="api-nesscery">是</td>
+							<td className="api-default">false</td>
+						</tr>
+						<tr>
+							<td className="api-style">onChecked</td>
+							<td className="api-style-description">
+								改变开关状态时的回调函数
+							</td>
+							<td className="api-type">
+								<p>{"() => void"}</p>
+							</td>
 							<td className="api-nesscery">是</td>
 							<td className="api-default">---</td>
 						</tr>
