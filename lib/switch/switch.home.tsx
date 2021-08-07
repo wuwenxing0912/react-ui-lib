@@ -3,10 +3,14 @@ import Switch from "./switch";
 import Icon from "../icon/icon";
 import createHighlightCode from "../helpers/code-highlight";
 
-const defaultSwitch = `<Switch></Switch>`;
-const defaultCheckedSwitch = `<Switch defaultChecked={true}></Switch>`;
+const defaultSwitch = `import React, { useState } from "react";
+const [checked, setChecked] = useState(false);
+<Switch checked={checked} onChecked={() => setChecked(!checked)}></Switch>`;
+const defaultCheckedSwitch = `import React, { useState } from "react";
+const [checked, setChecked] = useState(true);
+<Switch checked={checked} onChecked={() => setChecked(!checked)}></Switch>`;
 const disabledCheckedSwitch = `<Switch disabled={true}></Switch>
-<Switch defaultChecked={true} disabled={true}></Switch>`;
+<Switch checked={true} disabled={true}></Switch>`;
 
 const switchHome: React.FunctionComponent = () => {
 	return (
