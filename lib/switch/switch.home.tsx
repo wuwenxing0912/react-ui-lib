@@ -13,11 +13,11 @@ const switchHome: React.FunctionComponent = () => {
 		<Fragment>
 			{createSection("组件和代码示例", defaultSwitch, "开关的基本用法")}
 			{createSection("", defaultCheckedSwitch, "开关默认选中", {
-				defaultChecked: true,
+				homeChecked: true,
 				className: "hi",
 			})}
 			{createSectionOfDouble("", disabledCheckedSwitch, "禁用状态", {
-				defaultChecked: true,
+				homeChecked: true,
 				disabled: true,
 			})}
 			<section>
@@ -69,12 +69,17 @@ const createSection = (
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
-	const { defaultChecked, ...rest } = options || {};
+	const { homeChecked, ...rest } = options || {};
+	const [checked, setChecked] = useState(homeChecked || false);
 	return (
 		<section>
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
-				<Switch defaultChecked={defaultChecked} {...rest}></Switch>
+				<Switch
+					checked={checked}
+					onChecked={() => setChecked(!checked)}
+					{...rest}
+				></Switch>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>
@@ -118,21 +123,18 @@ const createSectionOfDouble = (
 ) => {
 	const [visible, setVisble] = useState(false);
 	const [showCode, setshowCode] = useState(false);
-	const { defaultChecked, disabled, ...rest } = options || {};
+	const { homeChecked, disabled, ...rest } = options || {};
 	return (
 		<section>
 			{h1 ? <h1>{h1}</h1> : ""}
 			<div className="example-container">
 				<Switch
+					checked={!homeChecked}
 					disabled={disabled}
 					style={{ marginRight: "20px" }}
 					{...rest}
 				></Switch>
-				<Switch
-					defaultChecked={defaultChecked}
-					disabled={disabled}
-					{...rest}
-				></Switch>
+				<Switch checked={homeChecked} disabled={disabled} {...rest}></Switch>
 			</div>
 			<div className="description">
 				<span className="text">{description}</span>
