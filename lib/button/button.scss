@@ -108,4 +108,30 @@
     font-size: 12px;
     padding: 2px 14px;
   }
+
+  & .x-loading {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: #8c8c8c #8c8c8c transparent transparent;
+    border-style: solid;
+    border-width: 1.5px;
+    animation: loading 1s infinite linear;
+  }
+  &.primary .x-loading {
+    border-color: #fff #fff transparent transparent;
+  }
+  &.danger .x-loading {
+    border-color: #fff #fff transparent transparent;
+  }
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }

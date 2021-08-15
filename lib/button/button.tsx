@@ -11,6 +11,7 @@ interface Props {
   ghost?: boolean;
   size?: "large" | "middle" | "small";
   buttonType?: "button" | "submit" | "reset";
+  loading?: boolean;
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
@@ -38,6 +39,7 @@ const Button: React.FunctionComponent<Props> = (props) => {
         type={buttonType}
         {...rest}
       >
+        {props.loading ? <span className="x-loading" /> : null}
         <span className="text">{props.children}</span>
       </button>
     </Fragment>
@@ -50,6 +52,7 @@ Button.defaultProps = {
   ghost: false,
   size: "middle",
   buttonType: "button",
+  loading: false,
 };
 
 export default Button;
