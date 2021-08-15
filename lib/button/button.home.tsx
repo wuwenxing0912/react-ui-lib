@@ -140,20 +140,22 @@ const createSection = (
   const f = (e: React.MouseEvent) => {
     console.log(e.type);
   };
-  //   const containerGhostStyle = ghost && {
-  //     background: "rgb(190, 200, 200)",
-  //   };
+  const containerGhostStyle = ghost
+    ? {
+        background: "rgb(190, 200, 200)",
+      }
+    : {};
   return (
     <Fragment>
       <section>
         {h1 ? <h1>{h1}</h1> : ""}
-        <div className="example-container">
+        <div className="example-container" style={containerGhostStyle}>
           <Button
             className="default"
             style={{ marginRight: 20 }}
             disabled={disabled}
-            ghost={ghost}
-            loading={loading}
+            ghost={ghost || false}
+            loading={loading || false}
             onClick={f}
           >
             Default
@@ -162,8 +164,8 @@ const createSection = (
             type="primary"
             style={{ marginRight: 20 }}
             disabled={disabled}
-            ghost={ghost}
-            loading={loading}
+            ghost={ghost || false}
+            loading={loading || false}
             onClick={f}
           >
             Primary
@@ -172,8 +174,8 @@ const createSection = (
             type="dashed"
             style={{ marginRight: 20 }}
             disabled={disabled}
-            ghost={ghost}
-            loading={loading}
+            ghost={ghost || false}
+            loading={loading || false}
             onClick={f}
           >
             Dashed
@@ -181,8 +183,8 @@ const createSection = (
           <Button
             type="danger"
             disabled={disabled}
-            ghost={ghost}
-            loading={loading}
+            ghost={ghost || false}
+            loading={loading || false}
             onClick={f}
           >
             Danger
