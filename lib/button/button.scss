@@ -1,111 +1,111 @@
 @import "../_theme_color.scss";
 .x-button {
-	font-size: 16px;
-	line-height: 26px;
-	padding: 4px 16px;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	background: #fff;
-	border: 1px solid;
-	border-radius: 4px;
-	border-color: rgba(0, 0, 0, 0.15);
-	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-	&.default:hover {
-		border-color: $main-color;
-		color: $main-color;
-		fill: $main-color;
-	}
-	&.primary {
-		background-color: $main-color;
-		color: #fff;
-		fill: #fff;
-	}
-	&.primary:hover {
-		border-color: rgba($main-color, 0.85);
-		background-color: rgba($main-color, 0.85);
-	}
-	&.dashed {
-		border-style: dashed;
-	}
-	&.dashed:hover {
-		border-color: $main-color;
-		color: $main-color;
-		fill: $main-color;
-	}
-	&.danger {
-		background-color: red;
-		color: #fff;
-		fill: #fff;
-	}
-	&.danger:hover {
-		border-color: rgba(red, 0.75);
-		background-color: rgba(red, 0.75);
-	}
-	&.disabled,
-	&.disabled:hover {
-		cursor: not-allowed;
-		color: #00000040;
-		background: #f5f5f5;
-		border-color: #d9d9d9;
-		fill: #00000040;
-	}
-	& .icon {
-		height: 16px;
-		width: 16px;
-	}
-	&.default.ghost {
-		color: #fff;
-		border-color: #fff;
-		fill: #fff;
-		background-color: transparent;
-	}
-	&.default.ghost:hover {
-		border-color: $main-color;
-		color: $main-color;
-		fill: $main-color;
-	}
-	&.primary.ghost {
-		background-color: transparent;
-		color: $main-color;
-		fill: $main-color;
-		border-color: $main-color;
-	}
-	&.primary.ghost:hover {
-		border-color: rgba($main-color, 0.75);
-		color: rgba($main-color, 0.75);
-		fill: rgba($main-color, 0.75);
-	}
-	&.dashed.ghost {
-		color: #fff;
-		border-color: #fff;
-		fill: #fff;
-		background-color: transparent;
-	}
-	&.dashed.ghost:hover {
-		border-color: $main-color;
-		color: $main-color;
-		fill: $main-color;
-	}
-	&.danger.ghost {
-		background-color: transparent;
-		color: rgba(red, 0.75);
-		fill: rgba(red, 0.75);
-		border-color: rgba(red, 0.75);
-	}
-	&.danger.ghost:hover {
-		border-color: rgba(red, 0.6);
-		color: rgba(red, 0.6);
-		fill: rgba(red, 0.6);
-	}
-	&.large {
-		line-height: 28px;
-		padding: 6px 18px;
-	}
-	&.small {
-		line-height: 24px;
-		font-size: 12px;		
-		padding: 2px 14px;
-	}
+  font-size: 16px;
+  line-height: 26px;
+  padding: 4px 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  &.default:hover {
+    border-color: $main-color;
+    color: $main-color;
+    fill: $main-color;
+  }
+  &.primary {
+    background-color: $main-color;
+    color: #fff;
+    fill: #fff;
+  }
+  &.primary:hover {
+    border-color: rgba($main-color, 0.85);
+    background-color: rgba($main-color, 0.85);
+  }
+  &.dashed {
+    border-style: dashed;
+  }
+  &.dashed:hover {
+    border-color: $main-color;
+    color: $main-color;
+    fill: $main-color;
+  }
+  &.danger {
+    background-color: red;
+    color: #fff;
+    fill: #fff;
+  }
+  &.danger:hover {
+    border-color: rgba(red, 0.75);
+    background-color: rgba(red, 0.75);
+  }
+  &.disabled,
+  &.disabled:hover {
+    cursor: not-allowed;
+    color: #00000040;
+    background: #f5f5f5;
+    border-color: #d9d9d9;
+    fill: #00000040;
+  }
+  & .icon {
+    height: 16px;
+    width: 16px;
+  }
+  &.default.ghost {
+    color: #fff;
+    border-color: #fff;
+    fill: #fff;
+    background-color: transparent;
+  }
+  &.default.ghost:hover {
+    border-color: $main-color;
+    color: $main-color;
+    fill: $main-color;
+  }
+  &.primary.ghost {
+    background-color: transparent;
+    color: $main-color;
+    fill: $main-color;
+    border-color: $main-color;
+  }
+  &.primary.ghost:hover {
+    border-color: rgba($main-color, 0.75);
+    color: rgba($main-color, 0.75);
+    fill: rgba($main-color, 0.75);
+  }
+  &.dashed.ghost {
+    color: #fff;
+    border-color: #fff;
+    fill: #fff;
+    background-color: transparent;
+  }
+  &.dashed.ghost:hover {
+    border-color: $main-color;
+    color: $main-color;
+    fill: $main-color;
+  }
+  &.danger.ghost {
+    background-color: transparent;
+    color: rgba(red, 0.75);
+    fill: rgba(red, 0.75);
+    border-color: rgba(red, 0.75);
+  }
+  &.danger.ghost:hover {
+    border-color: rgba(red, 0.6);
+    color: rgba(red, 0.6);
+    fill: rgba(red, 0.6);
+  }
+  &.large {
+    line-height: 28px;
+    padding: 6px 18px;
+  }
+  &.small {
+    line-height: 24px;
+    font-size: 12px;
+    padding: 2px 14px;
+  }
 }
