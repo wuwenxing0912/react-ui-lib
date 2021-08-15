@@ -24,17 +24,24 @@ const buttonSize = `const [size, setSize] = useState("middle");
 <Button type="dashed" onClick={() => {setSize("middle")}}>Dashed</Button>
 <Button type="danger" onClick={() => {setSize("small")}}>Danger</Button>`;
 
+const buttonLoading = `<Button type="default" loading={true}>Default</Button>
+<Button type="primary" loading={true}>Primary</Button>
+<Button type="dashed" loading={true}>Dashed</Button>
+<Button type="danger" loading={true}>Danger</Button>`;
+
 const ButtonHome: React.FunctionComponent = () => {
   const section1 = "按钮有四种类型：默认按钮、主题按钮、虚线按钮以及危险按钮。";
   const section2 = "按钮禁用：设置按钮 disabled 禁用状态。";
   const section3 = "幽灵按钮：常用在有色背景上，按钮背景变为透明。";
   const section4 = "按钮尺寸：按钮有大、中、小三种尺寸。";
+  const section5 = "按钮加载中状态。";
   return (
     <Fragment>
       {createSection("组件和代码示例", false, buttonType, section1)}
       {createSection("", true, buttonDisabled, section2)}
       {createSection("", false, buttonGhost, section3, true)}
       {createSectionButtonSize("", buttonSize, section4)}
+      {createSection("", false, buttonLoading, section5, false, true)}
       <section>
         <h1>API</h1>
         <table className="api-table" cellSpacing="0" cellPadding="0">
@@ -49,8 +56,8 @@ const ButtonHome: React.FunctionComponent = () => {
           </thead>
           <tbody>
             <tr>
-              <td className="api-button-type">type</td>
-              <td className="api-type-description">设置button的样式</td>
+              <td className="api">type</td>
+              <td className="api-description">设置button的样式</td>
               <td className="api-type">
                 "default" | "primary" | "dashed" | "danger"
               </td>
@@ -58,52 +65,57 @@ const ButtonHome: React.FunctionComponent = () => {
               <td className="api-default">default</td>
             </tr>
             <tr>
-              <td className="api-classname">className</td>
-              <td className="api-classname-description">自定义类名</td>
+              <td className="api">className</td>
+              <td className="api-description">自定义类名</td>
               <td className="api-type">string</td>
               <td className="api-nesscery">是</td>
               <td className="api-default">---</td>
             </tr>
             <tr>
-              <td className="api-style">style</td>
-              <td className="api-style-description">自定义样式</td>
+              <td className="api">style</td>
+              <td className="api-description">自定义样式</td>
               <td className="api-type">React.CSSProperties</td>
               <td className="api-nesscery">是</td>
               <td className="api-default">---</td>
             </tr>
             <tr>
-              <td className="api-style">disabled</td>
-              <td className="api-style-description">按钮禁用状态</td>
+              <td className="api">disabled</td>
+              <td className="api-description">按钮禁用状态</td>
               <td className="api-type">boolean</td>
               <td className="api-nesscery">是</td>
               <td className="api-default">false</td>
             </tr>
             <tr>
-              <td className="api-style">ghost</td>
-              <td className="api-style-description">幽灵按钮，背景透明</td>
+              <td className="api">ghost</td>
+              <td className="api-description">幽灵按钮，背景透明</td>
               <td className="api-type">boolean</td>
               <td className="api-nesscery">是</td>
               <td className="api-default">false</td>
             </tr>
             <tr>
-              <td className="api-style">size</td>
-              <td className="api-style-description">按钮尺寸大小</td>
+              <td className="api">loading</td>
+              <td className="api-description">按钮加载中状态</td>
+              <td className="api-type">boolean</td>
+              <td className="api-nesscery">是</td>
+              <td className="api-default">false</td>
+            </tr>
+            <tr>
+              <td className="api">size</td>
+              <td className="api-description">按钮尺寸大小</td>
               <td className="api-type">"large" | "middle" | "small"</td>
               <td className="api-nesscery">是</td>
               <td className="api-default">middle</td>
             </tr>
             <tr>
-              <td className="api-style">onClick</td>
-              <td className="api-style-description">点击按钮时的回调</td>
+              <td className="api">onClick</td>
+              <td className="api-description">点击按钮时的回调</td>
               <td className="api-type">React.MouseEventHandler</td>
               <td className="api-nesscery">是</td>
               <td className="api-default">---</td>
             </tr>
             <tr>
-              <td className="api-style">buttonType</td>
-              <td className="api-style-description">
-                设置原生button的type属性
-              </td>
+              <td className="api">buttonType</td>
+              <td className="api-description">设置原生button的type属性</td>
               <td className="api-type">"button" | "submit" | "reset"</td>
               <td className="api-nesscery">是</td>
               <td className="api-default">button</td>
@@ -120,29 +132,28 @@ const createSection = (
   disabled?: boolean,
   code?: string,
   description?: string,
-  ghost?: boolean
+  ghost?: boolean,
+  loading?: boolean
 ) => {
   const [visible, setVisble] = useState(false);
   const [showCode, setshowCode] = useState(false);
   const f = (e: React.MouseEvent) => {
     console.log(e.type);
   };
-  const containerGhostStyle = ghost && {
-    background: "rgb(190, 200, 200)",
-  };
+  //   const containerGhostStyle = ghost && {
+  //     background: "rgb(190, 200, 200)",
+  //   };
   return (
     <Fragment>
       <section>
         {h1 ? <h1>{h1}</h1> : ""}
-        <div
-          className="example-container"
-          style={containerGhostStyle as object}
-        >
+        <div className="example-container">
           <Button
             className="default"
             style={{ marginRight: 20 }}
             disabled={disabled}
             ghost={ghost}
+            loading={loading}
             onClick={f}
           >
             Default
@@ -152,6 +163,7 @@ const createSection = (
             style={{ marginRight: 20 }}
             disabled={disabled}
             ghost={ghost}
+            loading={loading}
             onClick={f}
           >
             Primary
@@ -161,11 +173,18 @@ const createSection = (
             style={{ marginRight: 20 }}
             disabled={disabled}
             ghost={ghost}
+            loading={loading}
             onClick={f}
           >
             Dashed
           </Button>
-          <Button type="danger" disabled={disabled} ghost={ghost} onClick={f}>
+          <Button
+            type="danger"
+            disabled={disabled}
+            ghost={ghost}
+            loading={loading}
+            onClick={f}
+          >
             Danger
           </Button>
         </div>
