@@ -1,14 +1,12 @@
 import React, { Fragment } from "react";
 import classes from "../helpers/classes";
 import "./button.scss";
-import Icon from "../icon/icon";
 
 interface Props {
   type?: "default" | "primary" | "dashed" | "danger";
   className?: string;
   style?: React.CSSProperties;
   disabled?: boolean;
-  icon?: string;
   onClick?: React.MouseEventHandler;
   ghost?: boolean;
   size?: "large" | "middle" | "small";
@@ -20,7 +18,6 @@ const Button: React.FunctionComponent<Props> = (props) => {
   const disabled = props.disabled ? "disabled" : undefined;
   const ghost = props.ghost ? "ghost" : undefined;
   const size = props.size ? props.size : "middle";
-  const icon = props.icon && <Icon name={props.icon}></Icon>;
   const onClick = (e: React.MouseEvent) => {
     if (disabled) return e.preventDefault();
     props.onClick && props.onClick.call(e.target, e);
@@ -41,7 +38,6 @@ const Button: React.FunctionComponent<Props> = (props) => {
         type={buttonType}
         {...rest}
       >
-        {icon}
         <span className="text">{props.children}</span>
       </button>
     </Fragment>

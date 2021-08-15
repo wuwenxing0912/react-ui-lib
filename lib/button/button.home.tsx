@@ -18,11 +18,6 @@ const buttonGhost = `<Button type="default" ghost={true}>Default</Button>
 <Button type="dashed" ghost={true}>Dashed</Button>
 <Button type="danger" ghost={true}>Danger</Button>`;
 
-const buttonIcon = `<Button type="default" icon="modify">Default</Button>
-<Button type="primary" icon="modify">Primary</Button>
-<Button type="dashed" icon="modify">Dashed</Button>
-<Button type="danger" icon="modify">Danger</Button>`;
-
 const buttonSize = `const [size, setSize] = useState("middle");
 <Button type="default" onClick={() => {setSize("large")}}>Default</Button>
 <Button type="primary" onClick={() => {setSize("middle")}}>Primary</Button>
@@ -32,21 +27,14 @@ const buttonSize = `const [size, setSize] = useState("middle");
 const ButtonHome: React.FunctionComponent = () => {
   const section1 = "按钮有四种类型：默认按钮、主题按钮、虚线按钮以及危险按钮。";
   const section2 = "按钮禁用：设置按钮 disabled 禁用状态。";
-  const section3 = "图标按钮：设置 icon 属性。";
-  const section4 = "幽灵按钮：常用在有色背景上，按钮背景变为透明。";
-  const section5 = "按钮尺寸：按钮有大、中、小三种尺寸。";
+  const section3 = "幽灵按钮：常用在有色背景上，按钮背景变为透明。";
+  const section4 = "按钮尺寸：按钮有大、中、小三种尺寸。";
   return (
     <Fragment>
       {createSection("组件和代码示例", false, buttonType, section1)}
       {createSection("", true, buttonDisabled, section2)}
-      {createSection("", false, buttonGhost, section4, [], true)}
-      {createSectionButtonSize("", buttonSize, section5)}
-      {createSection("", false, buttonIcon, section3, [
-        "setting",
-        "modify",
-        "sign-out",
-        "warn",
-      ])}
+      {createSection("", false, buttonGhost, section3, true)}
+      {createSectionButtonSize("", buttonSize, section4)}
       <section>
         <h1>API</h1>
         <table className="api-table" cellSpacing="0" cellPadding="0">
@@ -105,13 +93,6 @@ const ButtonHome: React.FunctionComponent = () => {
               <td className="api-default">middle</td>
             </tr>
             <tr>
-              <td className="api-style">icon</td>
-              <td className="api-style-description">自定义按钮图标</td>
-              <td className="api-type">string</td>
-              <td className="api-nesscery">是</td>
-              <td className="api-default">---</td>
-            </tr>
-            <tr>
               <td className="api-style">onClick</td>
               <td className="api-style-description">点击按钮时的回调</td>
               <td className="api-type">React.MouseEventHandler</td>
@@ -139,7 +120,6 @@ const createSection = (
   disabled?: boolean,
   code?: string,
   description?: string,
-  icon?: (string | undefined)[],
   ghost?: boolean
 ) => {
   const [visible, setVisble] = useState(false);
@@ -162,7 +142,6 @@ const createSection = (
             className="default"
             style={{ marginRight: 20 }}
             disabled={disabled}
-            icon={icon && icon[1]}
             ghost={ghost}
             onClick={f}
           >
@@ -172,7 +151,6 @@ const createSection = (
             type="primary"
             style={{ marginRight: 20 }}
             disabled={disabled}
-            icon={icon && icon[1]}
             ghost={ghost}
             onClick={f}
           >
@@ -182,19 +160,12 @@ const createSection = (
             type="dashed"
             style={{ marginRight: 20 }}
             disabled={disabled}
-            icon={icon && icon[1]}
             ghost={ghost}
             onClick={f}
           >
             Dashed
           </Button>
-          <Button
-            type="danger"
-            disabled={disabled}
-            icon={icon && icon[1]}
-            ghost={ghost}
-            onClick={f}
-          >
+          <Button type="danger" disabled={disabled} ghost={ghost} onClick={f}>
             Danger
           </Button>
         </div>
