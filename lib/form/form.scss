@@ -1,47 +1,47 @@
 .x-form {
-	width: 100%;
-	> .form-table {
-		border-collapse: collapse;
-		& td {
-			vertical-align: top;
-			padding-bottom: 8px;
-		}
-		& .td-lable {
-			line-height: 32px;
-		}
-		& .td-input,
-		& .td-buttons {
-			padding-left: 16px;
-		}
-		& .td-buttons-fill,
-		& .td-buttons {
-			padding-bottom: 0;
-		}
-		& .errors {
-			color: red;
-			font-size: 0.8em;
-			margin-top: 4px;
-		}
-	}
+  width: 100%;
+  > .form-table {
+    border-collapse: collapse;
+    & td {
+      vertical-align: top;
+      padding-bottom: 8px;
+    }
+    & .td-lable {
+      line-height: 32px;
+    }
+    & .td-input,
+    & .td-buttons {
+      padding-left: 16px;
+    }
+    & .td-buttons-fill,
+    & .td-buttons {
+      padding-bottom: 0;
+    }
+    & .errors {
+      color: red;
+      font-size: 0.8em;
+      margin-top: 4px;
+    }
+  }
 
-	> .v-layout {
-		& .v-input-wrapper {
-			& .v-lable {
-				padding-bottom: 8px;
-			}
-			& .v-input {
-				padding-bottom: 6px;
-				& input {
-					width: 100%;
-				}
-			}
-			& .errors {
-				color: red;
-				font-size: 0.8em;
-				margin-top: 8px;
-			}
-		}
-	}
+  > .v-layout {
+    & .v-input-wrapper {
+      & .v-lable {
+        padding-bottom: 8px;
+      }
+      & .v-input {
+        padding-bottom: 6px;
+        & input {
+          width: 100%;
+        }
+      }
+      & .errors {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 8px;
+      }
+    }
+  }
 
   > .i-layout {
     display: flex;
@@ -59,8 +59,8 @@
       & .errors {
         position: absolute;
         color: red;
-				font-size: 0.8em;
-				margin-top: 6px;
+        font-size: 0.8em;
+        margin-top: 6px;
       }
     }
   }
