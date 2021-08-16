@@ -15,7 +15,7 @@ import Switch from "./lib/switch/switch.home";
 import Scroll from "./lib/scroll/scroll.home";
 import Rate from "./lib/rate/rate.home";
 import Toast from "./lib/toast/toast.home";
-import LayoutHome from "./lib/layout/layout.home";
+import LayoutHome from "./example/layout/layout.home";
 import Modal from "./lib/modal/modal.home";
 import "./home.scss";
 
