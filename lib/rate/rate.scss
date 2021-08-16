@@ -1,37 +1,37 @@
 @import "../_theme_color.scss";
 .x-rate-wrapper {
-	display: inline-flex;
-	justify-content: flex-start;
-	align-items: center;
-	.x-rate-star {
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		margin-right: 6px;
-		cursor: pointer;
-		&:last-child {
-			margin-right: 0;
-		}
-		&.disabled {
-			cursor: initial;
-		}
-	}
-	.x-star-icon {
-		height: 20px;
-		width: 20px;
-		fill: #e8e8e8;
-		transform: scale(1);
-		transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-		&.defaul-value {
-			fill: $main-color;
-		}
-		&:hover {
-			transform: scale(1.2);
-			fill: $main-color;
-		}
-		&.disabled:hover {
-			transform: scale(1);
-			fill: #e8e8e8;
-		}
-	}
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  .x-rate-star {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6px;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.disabled {
+      cursor: initial;
+    }
+  }
+  .x-star-icon {
+    height: 20px;
+    width: 20px;
+    fill: #e8e8e8;
+    transform: scale(1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &.defaul-value {
+      fill: $main-color;
+    }
+    &:hover {
+      transform: scale(1.2);
+      fill: $main-color;
+    }
+    &.disabled:hover {
+      transform: scale(1);
+      fill: #e8e8e8;
+    }
+  }
 }
