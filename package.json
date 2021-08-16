@@ -1,6 +1,6 @@
 {
-  "name": "react-ui-lib.0",
-  "version": "0.0.7",
+  "name": "react-ui-lib",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
