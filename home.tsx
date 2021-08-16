@@ -10,7 +10,7 @@ import Icon from "./lib/icon/icon";
 import Button from "./example/button/button.home";
 import { Aside, Content, Footer, Header, Layout } from "./lib/layout/layout";
 import Input from "./lib/input/input.home";
-import Form from "./lib/form/form.home";
+import Form from "./example/form/form.home";
 import Switch from "./lib/switch/switch.home";
 import Scroll from "./lib/scroll/scroll.home";
 import Rate from "./lib/rate/rate.home";
