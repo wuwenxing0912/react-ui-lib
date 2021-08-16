@@ -6,12 +6,12 @@ const cc = componentClassMaker("x-layout");
 interface Props extends React.HTMLAttributes<HTMLElement> {}
 
 const Footer: React.FunctionComponent<Props> = (props) => {
-	const { className, ...rest } = props;
-	return (
-		<div className={cc("footer", { extra: className })} {...rest}>
-			{props.children}
-		</div>
-	);
+  const { className, ...rest } = props;
+  return (
+    <div className={cc("footer", { extra: className })} {...rest}>
+      {props.children}
+    </div>
+  );
 };
 
 export default Footer;
