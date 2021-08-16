@@ -16,7 +16,7 @@ import Scroll from "./lib/scroll/scroll.home";
 import Rate from "./lib/rate/rate.home";
 import Toast from "./lib/toast/toast.home";
 import LayoutHome from "./example/layout/layout.home";
-import Modal from "./lib/modal/modal.home";
+import Modal from "./example/modal/modal.home";
 import "./home.scss";
 
 ReactDOM.render(
