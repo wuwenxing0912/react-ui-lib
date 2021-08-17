@@ -8,7 +8,7 @@
 
 ## 开始使用
 
-1. 安装 react-xing
+### 安装 react-xing
 
 ```markdown
 npm i react-xing
@@ -16,7 +16,7 @@ npm i react-xing
 yarn add react-xing
 ```
 
-3. 引入 react-xing
+### 使用 react-xing
 
 ```typescript
 import React from 'react';
