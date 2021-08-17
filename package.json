@@ -1,6 +1,6 @@
 {
   "name": "lib-x-ui",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/wuwenxing0912/react-ui-lib/issues"
   },
-  "homepage": "https://github.com/wuwenxing0912/react-ui-lib#readme",
+  "homepage": "https://github.com/wuwenxing0912/react-ui-lib",
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
