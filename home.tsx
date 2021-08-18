@@ -93,7 +93,7 @@ ReactDOM.render(
           <Route path="/rate" component={Rate}></Route>
           <Route path="/form" component={Form}></Route>
           <Route exact path="/">
-            <Redirect to="/button" />
+            <Redirect to="/introduction" />
           </Route>
         </Content>
       </Layout>
