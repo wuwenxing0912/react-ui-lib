@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Input from "../../lib/input/input";
 
-const inputAddOn = `import Input from "./input";
+const inputAddOn = `import { Input } from "lib-x-ui";
 <Input addOnBefore="Before" addOnAfter="After" placeholder="placeholder" />
 <Input addOnAfter="After" placeholder="placeholder" />
 <Input addOnBefore="Before" placeholder="placeholder" />`;

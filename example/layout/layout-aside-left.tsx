@@ -7,7 +7,7 @@ import Layout, {
   Header,
 } from "../../lib/layout/layout";
 
-const layoutAsideLeft = `import Layout, { Content, Header, Footer, Aside } from "./layout";
+const layoutAsideLeft = `import { Layout, Content, Header, Footer, Aside } from "lib-x-ui";
 <Layout>
   <Header>Header</Header>
   <Layout>

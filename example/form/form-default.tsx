@@ -5,8 +5,7 @@ import Validator from "../../lib/form/validator";
 import Button from "../../lib/button/button";
 
 const formDefault = `import React, { Fragment, useState } from "react";
-import Form, { FormValue } from "./form";
-import Validator from "./validator";
+import { Form, FormValue, Validator } from "lib-x-ui";
 
 const [formData, setFormData] = useState<FormValue>({
   username: "",
@@ -43,7 +42,7 @@ const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       <Button>取消</Button>
     </Fragment>
   }
-/>;`;
+/>`;
 
 const FormDefault = () => {
   const [formData, setFormData] = useState<FormValue>({

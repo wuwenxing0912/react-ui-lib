@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Scroll from "../../lib/scroll/scroll";
 
-const scrollDefault = `import Scroll from "./scroll";
+const scrollDefault = `import { Scroll } from "lib-x-ui";
 <Scroll>
   <p>content 1</p>
   ......

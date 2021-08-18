@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Input from "../../lib/input/input";
 
-const inputDisabled = `import Input from "./input";
+const inputDisabled = `import { Input } from "lib-x-ui";
 <Input disabled={true} placeholder="disabled"/>`;
 
 const InputDisabled = () => {

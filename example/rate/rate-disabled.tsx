@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Rate from "../../lib/rate/rate";
 
-const rateDisabled = `import Rate from "./rate";
+const rateDisabled = `import { Rate } from "lib-x-ui";
 <Rate defaultValue={1} disabled={true} />`;
 
 const RateDisabled = () => {

@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Layout, { Content, Footer, Header } from "../../lib/layout/layout";
 
-const layoutDefault = `import Layout, { Content, Header, Footer } from "./layout";
+const layoutDefault = `import { Layout, Content, Header, Footer } from "lib-x-ui";
 <Layout>
   <Header>Header</Header>
   <Content>Content</Content>

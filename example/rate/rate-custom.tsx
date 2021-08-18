@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Rate from "../../lib/rate/rate";
 
-const rateCustom = `import Rate from "./rate";
+const rateCustom = `import { Rate } from "lib-x-ui";
 <Rate defaultValue={3} count={8}/>`;
 
 const RateCustom = () => {

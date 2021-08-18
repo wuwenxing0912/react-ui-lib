@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Input from "../../lib/input/input";
 
-const inputDefault = `import Input from "./input";
+const inputDefault = `import { Input } from "lib-x-ui";
 <Input placeholder="placeholder"/>`;
 
 const InputDefault = () => {

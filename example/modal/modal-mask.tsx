@@ -3,8 +3,11 @@ import Example from "../utils/example";
 import Button from "../../lib/button/button";
 import Modal from "../../lib/modal/modal";
 
-const modalMask = `import Modal from "./modal";
+const modalMask = `import { Modal } from "lib-x-ui";
 const [modalVisible, setModalVisible] = useState(false);
+<Button type="primary" onClick={() => setModalVisible(!modalVisible)}>
+  open Modal
+</Button>
 <Modal
   visible={modalVisible}
   onClose={() => setModalVisible(!modalVisible)}

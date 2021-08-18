@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Example from "../utils/example";
 import Button from "../../lib/button/button";
 
-const buttonSize = `import Button from "./button";
+const buttonSize = `import {Button} from "lib-x-ui";
 import React, { useState } from "react";
 const [size, setSize] = useState("middle");
 const ButtonSize = () => {

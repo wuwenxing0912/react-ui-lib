@@ -3,7 +3,7 @@ import Example from "../utils/example";
 import Switch from "../../lib/switch/switch";
 
 const switchDefault = `import React, { useState } from "react";
-import Switch from "./switch";
+import { Switch } from "lib-x-ui";
 const [checked, setChecked] = useState(false);
 <Switch checked={checked} onChecked={() => setChecked(!checked)}/>`;
 

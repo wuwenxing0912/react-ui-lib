@@ -3,7 +3,7 @@ import Example from "../utils/example";
 import Switch from "../../lib/switch/switch";
 
 const switchDisabled = `import React from "react"
-import Switch from "./switch";
+import { Switch } from "lib-x-ui";
 <Switch checked={false} disabled={true}/>
 <Switch checked={true} disabled={true}/>`;
 

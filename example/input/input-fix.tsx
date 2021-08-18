@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Input from "../../lib/input/input";
 
-const inputFix = `import Input from "./input";
+const inputFix = `import { Input } from "lib-x-ui";
 <Input prefix="username" placeholder="username" />
 <Input suffix="password" placeholder="password" />`;
 

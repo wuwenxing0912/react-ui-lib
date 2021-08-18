@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Input from "../../lib/input/input";
 
-const inputError = `import Input from "./input";
+const inputError = `import { Input } from "lib-x-ui";
 <Input error={true} placeholder="error"/>`;
 
 const InputError = () => {

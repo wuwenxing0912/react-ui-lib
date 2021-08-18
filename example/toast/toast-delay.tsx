@@ -3,7 +3,7 @@ import Example from "../utils/example";
 import { information, success, warning, error } from "../../lib/toast/toast";
 import Button from "../../lib/button/button";
 
-const toastDelay = `import { information, success, warning, error } from "./toast";
+const toastDelay = `import { information, success, warning, error } from "lib-x-ui";
 const options = { content: "There is some information here!", delay: 10 }
 <Button onClick={() => information(options)}>Information</Button>
 <Button onClick={() => success(options)}>Success</Button>

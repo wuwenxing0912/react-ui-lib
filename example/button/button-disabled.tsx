@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Button from "../../lib/button/button";
 
-const buttonDisabled = `import Button from "./button";
+const buttonDisabled = `import {Button} from "lib-x-ui";
 import React from "react";
 const ButtonDisabled = () => {
     return (

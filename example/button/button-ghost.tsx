@@ -2,7 +2,7 @@ import React from "react";
 import Example from "../utils/example";
 import Button from "../../lib/button/button";
 
-const buttonGhost = `import Button from "./button";
+const buttonGhost = `import {Button} from "lib-x-ui";
 import React from "react";
 const ButtonGhost = () => {
     return (
