@@ -4,6 +4,9 @@
   & .caption {
     font-size: 14px;
     margin-bottom: 20px;
+    & strong {
+      font-size: 16px;
+    }
   }
   & h1 {
     // font-size: 30px;

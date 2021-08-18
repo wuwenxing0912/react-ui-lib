@@ -14,6 +14,10 @@ const Usage = () => {
           <h1>开始使用</h1>
           <div className="caption">
             X-UI 已经发布到 NPM，可以使用 npm 或者 yarn 下载安装。
+            <br />
+            <strong>
+              X-UI 目前也许存在未发现的问题，所以请勿在生产环境中使用。
+            </strong>
           </div>
           <h2>安装</h2>
           <div className="command">
