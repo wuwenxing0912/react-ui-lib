@@ -68,6 +68,9 @@ $main-color: #007aff;
 .home-aside {
   border-right: 1px solid #eeeeee;
   margin-right: 32px;
+  & .introduction-h2 {
+    padding: 62px 16px 6px 30px;
+  }
 
   > h2 {
     font-size: 20px;
@@ -107,7 +110,7 @@ $main-color: #007aff;
     padding: 20px;
     margin: 0px auto;
     > h1 {
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
     & .example-container {
       margin: 0 auto;

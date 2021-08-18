@@ -40,7 +40,7 @@ ReactDOM.render(
       </Header>
       <Layout>
         <Aside className="home-aside">
-          <h2>X-UI</h2>
+          <h2 className="introduction-h2">X-UI</h2>
           <ul>
             <li>
               <NavLink to="/introduction">介绍</NavLink>
