@@ -6,6 +6,8 @@ import {
   NavLink,
   Redirect,
 } from "react-router-dom";
+import Introduction from "./example/introduction/introduction";
+import Usage from "./example/introduction/usage";
 import Icon from "./lib/icon/icon";
 import Button from "./example/button/button.home";
 import { Aside, Content, Footer, Header, Layout } from "./lib/layout/layout";
@@ -38,6 +40,15 @@ ReactDOM.render(
       </Header>
       <Layout>
         <Aside className="home-aside">
+          <h2>X-UI</h2>
+          <ul>
+            <li>
+              <NavLink to="/introduction">介绍</NavLink>
+            </li>
+            <li>
+              <NavLink to="/usage">开始使用</NavLink>
+            </li>
+          </ul>
           <h2>组件</h2>
           <ul>
             <li>
@@ -70,6 +81,8 @@ ReactDOM.render(
           </ul>
         </Aside>
         <Content className="home-content">
+          <Route path="/introduction" component={Introduction}></Route>
+          <Route path="/usage" component={Usage}></Route>
           <Route path="/button" component={Button}></Route>
           <Route path="/input" component={Input}></Route>
           <Route path="/switch" component={Switch}></Route>

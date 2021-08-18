@@ -1,0 +1,45 @@
+.x-ui {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 36px;
+  & h1 {
+    font-size: 30px;
+    margin: 20px 0;
+  }
+  & .caption {
+    font-size: 16px;
+    margin-bottom: 80px;
+  }
+
+  & .icon-wrapper {
+    // border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .ts-wrapper,
+    & .react-wrapper,
+    & .sass-wrapper {
+      //   border: 1px solid blue;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      width: 33.3333333%;
+      padding: 0 32px;
+
+      //   & .lib {
+      //     padding: 8px 0;
+      //   }
+      & .text {
+        white-space: nowrap;
+        font-size: 16px;
+      }
+      & .react-icon,
+      & .ts-icon,
+      & .sass-icon {
+        height: 80px;
+        width: 80px;
+      }
+    }
+  }
+}
