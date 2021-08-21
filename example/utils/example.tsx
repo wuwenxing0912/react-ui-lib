@@ -47,7 +47,7 @@ const Example: React.FunctionComponent<Props> = (props) => {
         className="code-area"
         style={{ display: codeVisible ? "block" : "none" }}
       >
-        {createHighlightCode(code as string)}
+        {createHighlightCode(code)}
       </div>
     </section>
   );
