@@ -11,8 +11,8 @@ interface Props {
 
 const Example: React.FunctionComponent<Props> = (props) => {
   const { title, description, code } = props;
-  const [visible, setVisble] = useState(false);
-  const [showCode, setshowCode] = useState(false);
+  const [codeVisible, setCodeVisible] = useState(false);
+  const [codeTip, setCodeTip] = useState(false);
   return (
     <Fragment>
       <section>
@@ -26,27 +26,27 @@ const Example: React.FunctionComponent<Props> = (props) => {
             className="code-icon"
             style={{ display: "inline-flex", cursor: "pointer" }}
             onClick={() => {
-              setVisble(!visible);
+              setCodeVisible(!codeVisible);
             }}
             onMouseEnter={() => {
-              setshowCode(!showCode);
+              setCodeTip(!codeTip);
             }}
             onMouseLeave={() => {
-              setshowCode(!showCode);
+              setCodeTip(!codeTip);
             }}
           >
             <Icon name="code" style={{ height: 19 }}></Icon>
           </span>
           <span
             className="pop-content"
-            style={{ display: showCode ? "inline-block" : "none" }}
+            style={{ display: codeTip ? "inline-block" : "none" }}
           >
-            {visible ? "收起代码" : "显示代码"}
+            {codeVisible ? "收起代码" : "显示代码"}
           </span>
         </div>
         <div
           className="code-area"
-          style={{ display: visible ? "block" : "none" }}
+          style={{ display: codeVisible ? "block" : "none" }}
         >
           {createHighlightCode(code as string)}
         </div>
